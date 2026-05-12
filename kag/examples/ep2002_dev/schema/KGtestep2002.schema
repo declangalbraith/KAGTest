@@ -1,0 +1,212 @@
+namespace KGtestep2002
+
+ProductModel(产品型号): EntityType
+	properties:
+		productLine(产品线): Text
+			index: Text
+		productFamily(产品族): Text
+			index: Text
+		modelCode(型号编码): Text
+			index: Text
+		productCategory(产品类别): Text
+			index: Text
+	relations:
+		manufacturer(制造商): Organization
+		hasBOMPart(包含BOM件): BOMPart
+		hasBOMRoot(根BOM): BOMPart
+		hasInstance(产品实例): ProductInstance
+
+Installation(安装记录): EntityType
+	properties:
+		installationId(安装记录ID): Text
+			index: Text
+		positionCode(安装位号): Text
+			index: Text
+		removeTime(拆卸时间): Text
+		installTime(安装时间): Text
+			index: Text
+		isCurrent(是否当前安装): Text
+			index: Text
+	relations:
+		product(产品实例): ProductInstance
+		partSerial(实际安装件): PartSerial
+		bomPart(对应BOM件): BOMPart
+		generatedByEvent(来源事件): ProductEvent
+		operator(操作人): Person
+
+Person(人员): EntityType
+	properties:
+		role(角色): Text
+			index: Text
+		personCode(人员编码): Text
+			index: Text
+	relations:
+		belongsToOrg(所属组织): Organization
+
+PartSerial(部件序列件): EntityType
+	properties:
+		status(状态): Text
+			index: Text
+		batchNo(批次号): Text
+		serialNumber(部件序列号): Text
+			index: Text
+	relations:
+		involvedIn8D(关联8D): EightDReport
+		involvedInEvent(关联事件): ProductEvent
+		replacedBy(替换后件): PartSerial
+		replaces(替换前件): PartSerial
+		instanceOfPart(对应设计件): BOMPart
+		suppliedBy(供应商): Organization
+		installedOn(安装于产品): ProductInstance
+
+CauseItem(原因项): EntityType
+	properties:
+		causeType(原因类型): Text
+			index: Text
+		title(标题): Text
+			index: Text
+		causeId(原因ID): Text
+			index: Text
+		isVerified(是否已验证): Text
+			index: Text
+	relations:
+		relatedFailureMode(关联失效模式): FailureMode
+		relatedPart(关联设计件): BOMPart
+		relatedSerial(关联序列件): PartSerial
+		belongsToReport(所属8D): EightDReport
+		relatedEvent(关联事件): ProductEvent
+
+BOMPart(BOM部件): EntityType
+	properties:
+		partType(部件类型): Text
+			index: Text
+		partNo(设计件号): Text
+			index: Text
+		positionCode(位号): Text
+			index: Text
+		bomLevel(BOM层级): Text
+	relations:
+		parentPart(上级BOM件): BOMPart
+		fulfilledBy(对应实例件): PartSerial
+		childPart(下级BOM件): BOMPart
+		hasFailureMode(失效模式): FailureMode
+		belongsToModel(所属型号): ProductModel
+		alternativePart(替代件): BOMPart
+
+Location(地点): EntityType
+	properties:
+		city(城市): Text
+		locationCode(地点编码): Text
+			index: Text
+		country(国家): Text
+
+EightDReport(8D报告): EntityType
+	properties:
+		issueTitle(问题标题): Text
+			index: Text
+		d5PermanentCorrectionSummary(D5永久纠正摘要): Text
+			index: Text
+		reportNo(8D编号): Text
+			index: Text
+		d4RootCauseSummary(D4根因分析摘要): Text
+			index: Text
+		reportStatus(报告状态): Text
+			index: Text
+		d2ProblemStatement(D2问题描述): Text
+			index: Text
+		d7PreventionSummary(D7防再发摘要): Text
+			index: Text
+	relations:
+		affectedPart(影响设计件): BOMPart
+		preventiveAction(预防措施): ActionItem
+		rootCause(根因项): CauseItem
+		sourceEvent(源事件): ProductEvent
+		affectedProduct(影响产品): ProductInstance
+		responsibleOrg(责任组织): Organization
+		correctiveAction(纠正措施): ActionItem
+		owner(负责人): Person
+		affectedSerial(影响序列件): PartSerial
+
+ActionItem(措施项): EntityType
+	properties:
+		status(状态): Text
+			index: Text
+		actionId(措施ID): Text
+			index: Text
+		title(标题): Text
+			index: Text
+		actionType(措施类型): Text
+			index: Text
+	relations:
+		relatedEvent(关联事件): ProductEvent
+		verifiesCause(验证原因项): CauseItem
+		targetSerial(作用序列件): PartSerial
+		targetProduct(作用产品): ProductInstance
+		responsibleOrg(责任组织): Organization
+		targetPart(作用设计件): BOMPart
+		belongsToReport(所属8D): EightDReport
+		owner(负责人): Person
+
+ProductInstance(产品实例): EntityType
+	properties:
+		serialNumber(产品序列号): Text
+			index: Text
+		assetCode(资产编码): Text
+			index: Text
+		commissionDate(启用日期): Text
+		status(状态): Text
+			index: Text
+	relations:
+		basedOnModel(对应型号): ProductModel
+		locatedAt(安装地点): Location
+		has8D(关联8D): EightDReport
+		hasInstallation(安装记录): Installation
+		hasCurrentPart(当前安装件): PartSerial
+		hasEvent(发生事件): ProductEvent
+		ownedBy(所属客户): Organization
+
+Organization(组织机构): EntityType
+	properties:
+		orgType(组织类型): Text
+			index: Text
+		orgCode(组织编码): Text
+			index: Text
+
+FailureMode(失效模式): EntityType
+	properties:
+		modeCode(失效模式编码): Text
+			index: Text
+
+ProductEvent(产品事件): EntityType
+	properties:
+		severity(严重级别): Text
+			index: Text
+		symptom(现象描述): Text
+			index: Text
+		eventTime(发生时间): Text
+			index: Text
+		status(处理状态): Text
+			index: Text
+		eventCode(事件编码): Text
+			index: Text
+		eventType(事件类型): Text
+			index: Text
+		eventId(事件ID): Text
+			index: Text
+	relations:
+		reportedBy(上报人): Person
+		happenedOn(发生于产品): ProductInstance
+		responsibleOrg(责任组织): Organization
+		relatedFailureMode(关联失效模式): FailureMode
+		category(事件分类): EventCategory
+		relatedInstallation(关联安装记录): Installation
+		relatedSerial(关联序列件): PartSerial
+		relatedPart(关联设计件): BOMPart
+		has8DReport(8D报告): EightDReport
+
+EventCategory(事件分类): EntityType
+	properties:
+		categoryCode(分类编码): Text
+			index: Text
+	relations:
+		parentCategory(上级分类): EventCategory

@@ -1,0 +1,461 @@
+[
+  {
+    "category": "EightDReport",
+    "properties": {
+      "name": "关于复兴号动车供风单元干燥器故障（5228）分析报告",
+      "reportNo": "5228",
+      "issueTitle": "复兴号动车供风单元干燥器压力开关故障",
+      "ownerName": null,
+      "ownerRole": null,
+      "d4RootCauseSummary": "NBR隔膜直径、高度、硬度变化，安装后压缩量增加以及高温综合因素造成隔膜变形，隔膜变形导致堵塞进气孔，与壳体内腔之间形成密闭空间导致卡滞故障的产生。",
+      "d5PermanentCorrectionSummary": "对已交付供风单元全部更新替代压力开关。",
+      "d7PreventionSummary": "对2021年44周之后交付机组进行现场整治（优先南方路局），共计610列1518台供风单元；2021年44周之前交付机组结合四级修进行整治，四级修干燥器压力开关为必换件。",
+      "rootCause": [
+        "NBR隔膜直径、高度、硬度变化，安装后压缩量增加以及高温综合因素造成隔膜变形"
+      ],
+      "correctiveAction": [
+        "对已交付供风单元全部更新替代压力开关"
+      ],
+      "preventiveAction": [
+        "对2021年44周之后交付机组进行现场整治（优先南方路局），共计610列1518台供风单元",
+        "2021年44周之前交付机组结合四级修进行整治，四级修干燥器压力开关为必换件"
+      ],
+      "affectedPart": [
+        "压力开关NBR隔膜"
+      ],
+      "affectedProduct": [
+        "复兴号动车供风单元"
+      ],
+      "sourceEvent": [
+        "复兴号动车供风单元干燥器压力开关故障事件"
+      ],
+      "responsibleOrg": [
+        "复兴号动车供风单元项目组"
+      ]
+    }
+  },
+  {
+    "category": "ProductModel",
+    "properties": {
+      "name": "复兴号动车供风单元",
+      "modelCode": null,
+      "productCategory": "供风单元",
+      "productLine": null,
+      "productFamily": null,
+      "manufacturerName": null,
+      "hasBOMRoot": [
+        "压力开关NBR隔膜"
+      ],
+      "hasInstance": [
+        "复兴号动车供风单元(SN-不明确)"
+      ],
+      "manufacturer": null,
+      "hasBOMPart": [
+        "压力开关NBR隔膜"
+      ]
+    }
+  },
+  {
+    "category": "ProductInstance",
+    "properties": {
+      "name": "复兴号动车供风单元(SN-不明确)",
+      "serialNumber": "SN-不明确",
+      "ownerName": null,
+      "siteCity": null,
+      "siteCountry": null,
+      "siteCode": null,
+      "basedOnModel": [
+        "复兴号动车供风单元"
+      ],
+      "ownedBy": null,
+      "has8D": [
+        "关于复兴号动车供风单元干燥器故障（5228）分析报告"
+      ],
+      "hasEvent": [
+        "复兴号动车供风单元干燥器压力开关故障事件"
+      ]
+    }
+  },
+  {
+    "category": "BOMPart",
+    "properties": {
+      "name": "压力开关NBR隔膜",
+      "partNo": null,
+      "bomLevel": null,
+      "positionCode": null,
+      "partType": "隔膜",
+      "belongsToModel": [
+        "复兴号动车供风单元"
+      ],
+      "childPart": null,
+      "parentPart": null,
+      "alternativePart": [
+        "SUCO金触点压力开关"
+      ],
+      "fulfilledBy": [
+        "P1（复现试验件1）",
+        "P2（复现试验件2）",
+        "S1（故障件1）",
+        "S2（故障件2）",
+        "S3（故障件3）",
+        "S4（故障件4）",
+        "S5（故障件5）"
+      ],
+      "hasFailureMode": [
+        "隔膜变形"
+      ]
+    }
+  },
+  {
+    "category": "FailureMode",
+    "properties": {
+      "name": "隔膜变形",
+      "modeCode": "FM-DIAPHRAGM-DEFORMATION"
+    }
+  },
+  {
+    "category": "ProductEvent",
+    "properties": {
+      "name": "复兴号动车供风单元干燥器压力开关故障事件",
+      "severity": null,
+      "symptom": "接通后不断开",
+      "eventType": "故障",
+      "eventCode": null,
+      "reporterName": null,
+      "status": null,
+      "eventId": null,
+      "has8DReport": [
+        "关于复兴号动车供风单元干燥器故障（5228）分析报告"
+      ],
+      "relatedInstallation": null,
+      "responsibleOrg": [
+        "复兴号动车供风单元项目组"
+      ],
+      "relatedPart": [
+        "压力开关NBR隔膜"
+      ],
+      "relatedFailureMode": [
+        "隔膜变形"
+      ],
+      "category": null,
+      "happenedOn": [
+        "复兴号动车供风单元(SN-不明确)"
+      ],
+      "relatedSerial": [
+        "P1（复现试验件1）",
+        "P2（复现试验件2）",
+        "S1（故障件1）",
+        "S2（故障件2）",
+        "S3（故障件3）",
+        "S4（故障件4）",
+        "S5（故障件5）"
+      ]
+    }
+  },
+  {
+    "category": "PartSerial",
+    "properties": {
+      "name": "P1（复现试验件1）",
+      "batchNo": null,
+      "status": "故障复现",
+      "supplierName": null,
+      "serialNumber": "不明确",
+      "instanceOfPart": [
+        "压力开关NBR隔膜"
+      ],
+      "involvedInEvent": [
+        "复兴号动车供风单元干燥器压力开关故障事件"
+      ],
+      "involvedIn8D": [
+        "关于复兴号动车供风单元干燥器故障（5228）分析报告"
+      ],
+      "replacedBy": null,
+      "suppliedBy": null,
+      "replaces": null,
+      "installedOn": [
+        "复兴号动车供风单元(SN-不明确)"
+      ]
+    }
+  },
+  {
+    "category": "PartSerial",
+    "properties": {
+      "name": "P2（复现试验件2）",
+      "batchNo": null,
+      "status": "故障复现",
+      "supplierName": null,
+      "serialNumber": "不明确",
+      "instanceOfPart": [
+        "压力开关NBR隔膜"
+      ],
+      "involvedInEvent": [
+        "复兴号动车供风单元干燥器压力开关故障事件"
+      ],
+      "involvedIn8D": [
+        "关于复兴号动车供风单元干燥器故障（5228）分析报告"
+      ],
+      "replacedBy": null,
+      "suppliedBy": null,
+      "replaces": null,
+      "installedOn": [
+        "复兴号动车供风单元(SN-不明确)"
+      ]
+    }
+  },
+  {
+    "category": "PartSerial",
+    "properties": {
+      "name": "S1（故障件1）",
+      "batchNo": null,
+      "status": "故障",
+      "supplierName": null,
+      "serialNumber": "不明确",
+      "instanceOfPart": [
+        "压力开关NBR隔膜"
+      ],
+      "involvedInEvent": [
+        "复兴号动车供风单元干燥器压力开关故障事件"
+      ],
+      "involvedIn8D": [
+        "关于复兴号动车供风单元干燥器故障（5228）分析报告"
+      ],
+      "replacedBy": null,
+      "suppliedBy": null,
+      "replaces": null,
+      "installedOn": [
+        "复兴号动车供风单元(SN-不明确)"
+      ]
+    }
+  },
+  {
+    "category": "PartSerial",
+    "properties": {
+      "name": "S2（故障件2）",
+      "batchNo": null,
+      "status": "故障",
+      "supplierName": null,
+      "serialNumber": "不明确",
+      "instanceOfPart": [
+        "压力开关NBR隔膜"
+      ],
+      "involvedInEvent": [
+        "复兴号动车供风单元干燥器压力开关故障事件"
+      ],
+      "involvedIn8D": [
+        "关于复兴号动车供风单元干燥器故障（5228）分析报告"
+      ],
+      "replacedBy": null,
+      "suppliedBy": null,
+      "replaces": null,
+      "installedOn": [
+        "复兴号动车供风单元(SN-不明确)"
+      ]
+    }
+  },
+  {
+    "category": "PartSerial",
+    "properties": {
+      "name": "S3（故障件3）",
+      "batchNo": null,
+      "status": "故障",
+      "supplierName": null,
+      "serialNumber": "不明确",
+      "instanceOfPart": [
+        "压力开关NBR隔膜"
+      ],
+      "involvedInEvent": [
+        "复兴号动车供风单元干燥器压力开关故障事件"
+      ],
+      "involvedIn8D": [
+        "关于复兴号动车供风单元干燥器故障（5228）分析报告"
+      ],
+      "replacedBy": null,
+      "suppliedBy": null,
+      "replaces": null,
+      "installedOn": [
+        "复兴号动车供风单元(SN-不明确)"
+      ]
+    }
+  },
+  {
+    "category": "PartSerial",
+    "properties": {
+      "name": "S4（故障件4）",
+      "batchNo": null,
+      "status": "故障",
+      "supplierName": null,
+      "serialNumber": "不明确",
+      "instanceOfPart": [
+        "压力开关NBR隔膜"
+      ],
+      "involvedInEvent": [
+        "复兴号动车供风单元干燥器压力开关故障事件"
+      ],
+      "involvedIn8D": [
+        "关于复兴号动车供风单元干燥器故障（5228）分析报告"
+      ],
+      "replacedBy": null,
+      "suppliedBy": null,
+      "replaces": null,
+      "installedOn": [
+        "复兴号动车供风单元(SN-不明确)"
+      ]
+    }
+  },
+  {
+    "category": "PartSerial",
+    "properties": {
+      "name": "S5（故障件5）",
+      "batchNo": null,
+      "status": "故障",
+      "supplierName": null,
+      "serialNumber": "不明确",
+      "instanceOfPart": [
+        "压力开关NBR隔膜"
+      ],
+      "involvedInEvent": [
+        "复兴号动车供风单元干燥器压力开关故障事件"
+      ],
+      "involvedIn8D": [
+        "关于复兴号动车供风单元干燥器故障（5228）分析报告"
+      ],
+      "replacedBy": null,
+      "suppliedBy": null,
+      "replaces": null,
+      "installedOn": [
+        "复兴号动车供风单元(SN-不明确)"
+      ]
+    }
+  },
+  {
+    "category": "CauseItem",
+    "properties": {
+      "name": "NBR隔膜直径、高度、硬度变化，安装后压缩量增加以及高温综合因素造成隔膜变形",
+      "title": "NBR隔膜直径、高度、硬度变化，安装后压缩量增加以及高温综合因素造成隔膜变形",
+      "causeType": "根本原因",
+      "evidence": "通过分析和试验确认NBR隔膜直径、高度、硬度变化，安装后压缩量增加以及高温综合因素造成隔膜变形，隔膜变形导致堵塞进气孔，与壳体内腔之间形成密闭空间导致卡滞故障的产生。",
+      "belongsToReport": [
+        "关于复兴号动车供风单元干燥器故障（5228）分析报告"
+      ],
+      "relatedFailureMode": [
+        "隔膜变形"
+      ],
+      "relatedPart": [
+        "压力开关NBR隔膜"
+      ],
+      "relatedSerial": [
+        "P1（复现试验件1）",
+        "P2（复现试验件2）",
+        "S1（故障件1）",
+        "S2（故障件2）",
+        "S3（故障件3）",
+        "S4（故障件4）",
+        "S5（故障件5）"
+      ]
+    }
+  },
+  {
+    "category": "ActionItem",
+    "properties": {
+      "name": "对已交付供风单元全部更新替代压力开关",
+      "title": "对已交付供风单元全部更新替代压力开关",
+      "actionType": "纠正措施D5",
+      "status": "计划中",
+      "evidence": "对已交付供风单元全部更新替代压力开关。",
+      "belongsToReport": [
+        "关于复兴号动车供风单元干燥器故障（5228）分析报告"
+      ],
+      "verifiesCause": [
+        "NBR隔膜直径、高度、硬度变化，安装后压缩量增加以及高温综合因素造成隔膜变形"
+      ],
+      "targetPart": [
+        "压力开关NBR隔膜"
+      ],
+      "targetSerial": [
+        "P1（复现试验件1）",
+        "P2（复现试验件2）",
+        "S1（故障件1）",
+        "S2（故障件2）",
+        "S3（故障件3）",
+        "S4（故障件4）",
+        "S5（故障件5）"
+      ],
+      "responsibleOrg": [
+        "复兴号动车供风单元项目组"
+      ]
+    }
+  },
+  {
+    "category": "ActionItem",
+    "properties": {
+      "name": "对2021年44周之后交付机组进行现场整治（优先南方路局），共计610列1518台供风单元",
+      "title": "对2021年44周之后交付机组进行现场整治（优先南方路局），共计610列1518台供风单元",
+      "actionType": "预防措施D7",
+      "status": "计划中",
+      "evidence": "对2021年44周之后交付机组进行现场整治（优先南方路局），共计610列1518台供风单元。",
+      "belongsToReport": [
+        "关于复兴号动车供风单元干燥器故障（5228）分析报告"
+      ],
+      "responsibleOrg": [
+        "复兴号动车供风单元项目组"
+      ]
+    }
+  },
+  {
+    "category": "ActionItem",
+    "properties": {
+      "name": "2021年44周之前交付机组结合四级修进行整治，四级修干燥器压力开关为必换件",
+      "title": "2021年44周之前交付机组结合四级修进行整治，四级修干燥器压力开关为必换件",
+      "actionType": "预防措施D7",
+      "status": "计划中",
+      "evidence": "2021年44周之前交付机组结合四级修进行整治，四级修干燥器压力开关为必换件。",
+      "belongsToReport": [
+        "关于复兴号动车供风单元干燥器故障（5228）分析报告"
+      ],
+      "responsibleOrg": [
+        "复兴号动车供风单元项目组"
+      ]
+    }
+  },
+  {
+    "category": "Organization",
+    "properties": {
+      "name": "复兴号动车供风单元项目组",
+      "orgType": "内部部门"
+    }
+  },
+  {
+    "category": "Organization",
+    "properties": {
+      "name": "工业和信息化部电子第五研究所",
+      "orgType": "第三方"
+    }
+  },
+  {
+    "category": "Organization",
+    "properties": {
+      "name": "SUCO",
+      "orgType": "制造商"
+    }
+  },
+  {
+    "category": "BOMPart",
+    "properties": {
+      "name": "SUCO金触点压力开关",
+      "partNo": "0190-458-03-1-042",
+      "bomLevel": null,
+      "positionCode": null,
+      "partType": "压力开关",
+      "belongsToModel": [
+        "复兴号动车供风单元"
+      ],
+      "childPart": null,
+      "parentPart": null,
+      "alternativePart": [
+        "压力开关NBR隔膜"
+      ],
+      "fulfilledBy": null,
+      "hasFailureMode": null
+    }
+  }
+]

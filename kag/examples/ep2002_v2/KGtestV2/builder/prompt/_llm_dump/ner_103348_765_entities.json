@@ -1,0 +1,156 @@
+[
+  {
+    "category": "EightDReport",
+    "name": "关于复兴号动车供风单元干燥器故障（5228）分析报告",
+    "properties": {
+      "reportNo": "5228",
+      "issueTitle": "复兴号动车供风单元干燥器故障",
+      "ownerName": "北京纵横机电科技有限公司",
+      "ownerRole": "制造商",
+      "d4RootCauseSummary": "压力开关的失效模式为不断开",
+      "d5PermanentCorrectionSummary": "更换压力开关",
+      "d7PreventionSummary": "无"
+    }
+  },
+  {
+    "category": "ProductModel",
+    "name": "复兴号动车组供风单元",
+    "properties": {
+      "modelCode": "NKT001",
+      "manufacturerName": "北京纵横机电科技有限公司"
+    }
+  },
+  {
+    "category": "ProductInstance",
+    "name": "复兴号动车组供风单元",
+    "properties": {
+      "serialNumber": null,
+      "ownerName": null,
+      "siteCity": null,
+      "siteCountry": null
+    }
+  },
+  {
+    "category": "BOMPart",
+    "name": "干燥器压力开关",
+    "properties": {
+      "partNo": null,
+      "positionCode": "干燥器阀板支架位置",
+      "partType": "压力开关"
+    }
+  },
+  {
+    "category": "PartSerial",
+    "name": "BA-5-故障",
+    "properties": {
+      "batchNo": "21年44周之后",
+      "status": "故障",
+      "supplierName": "德国巴士德",
+      "serialNumber": "BA-5-故障"
+    }
+  },
+  {
+    "category": "PartSerial",
+    "name": "BA-6-故障",
+    "properties": {
+      "batchNo": "21年44周之后",
+      "status": "故障",
+      "supplierName": "德国巴士德",
+      "serialNumber": "BA-6-故障"
+    }
+  },
+  {
+    "category": "PartSerial",
+    "name": "BA-7-故障",
+    "properties": {
+      "batchNo": "21年44周之后",
+      "status": "故障",
+      "supplierName": "德国巴士德",
+      "serialNumber": "BA-7-故障"
+    }
+  },
+  {
+    "category": "PartSerial",
+    "name": "BA-8-故障",
+    "properties": {
+      "batchNo": "21年44周之后",
+      "status": "故障",
+      "supplierName": "德国巴士德",
+      "serialNumber": "BA-8-故障"
+    }
+  },
+  {
+    "category": "PartSerial",
+    "name": "BA-9-故障",
+    "properties": {
+      "batchNo": "21年44周之后",
+      "status": "故障",
+      "supplierName": "德国巴士德",
+      "serialNumber": "BA-9-故障"
+    }
+  },
+  {
+    "category": "PartSerial",
+    "name": "BA-10-故障",
+    "properties": {
+      "batchNo": "21年44周之后",
+      "status": "故障",
+      "supplierName": "德国巴士德",
+      "serialNumber": "BA-10-故障"
+    }
+  },
+  {
+    "category": "FailureMode",
+    "name": "不断开",
+    "properties": {
+      "modeCode": "FM-PS-NO-DISCONNECT"
+    }
+  },
+  {
+    "category": "ProductEvent",
+    "name": "复兴号动车组供风单元干燥器故障事件",
+    "properties": {
+      "eventTime": "2024-05-01",
+      "symptom": "干燥器故障",
+      "eventType": "故障",
+      "reporterName": "北京纵横机电科技有限公司",
+      "status": "已解决",
+      "eventId": null
+    }
+  },
+  {
+    "category": "CauseItem",
+    "name": "压力开关的失效模式为不断开",
+    "properties": {
+      "title": "压力开关的失效模式为不断开",
+      "causeType": "根本原因",
+      "evidence": "初步定位失效部件为干燥器压力开关，压力开关的失效模式为不断开。",
+      "causeId": null,
+      "isVerified": "true"
+    }
+  },
+  {
+    "category": "ActionItem",
+    "name": "更换压力开关",
+    "properties": {
+      "title": "更换压力开关",
+      "actionType": "纠正措施D5",
+      "status": "已完成",
+      "evidence": "2024年5月至今发生故障的车组均已现场更换压力开关，更换压力开关后，从未出现过再次发生故障的情况。"
+    }
+  },
+  {
+    "category": "Organization",
+    "name": "北京纵横机电科技有限公司",
+    "properties": {
+      "orgType": "制造商"
+    }
+  },
+  {
+    "category": "Organization",
+    "name": "德国巴士德",
+    "properties": {
+      "orgType": "供应商"
+    }
+  }
+]

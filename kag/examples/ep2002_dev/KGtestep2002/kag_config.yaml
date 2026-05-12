@@ -1,0 +1,66 @@
+#------------ project ----------------#
+openie_llm: &openie_llm
+  type: maas
+  base_url: https://api.siliconflow.cn/v1
+  api_key: sk-yrwobvrcxtpyxaqecbqqkqoacxcxpexeiteyywznyiebavng
+  model: Qwen/Qwen2.5-72B-Instruct
+  enable_check: false
+
+chat_llm: &chat_llm
+  type: maas
+  base_url: https://api.siliconflow.cn/v1
+  api_key: sk-yrwobvrcxtpyxaqecbqqkqoacxcxpexeiteyywznyiebavng
+  model: Qwen/Qwen2.5-72B-Instruct
+  enable_check: false
+
+vectorize_model: &vectorize_model
+  type: openai
+  base_url: https://api.siliconflow.cn/v1
+  api_key: sk-yrwobvrcxtpyxaqecbqqkqoacxcxpexeiteyywznyiebavng
+  model: BAAI/bge-m3
+  vector_dimensions: 1024
+  enable_check: false
+vectorizer: *vectorize_model
+
+log:
+  level: INFO
+
+project:
+  biz_scene: default
+  host_addr: http://117.62.232.51:18887
+  language: zh
+  namespace: KGtestep2002
+
+#------------ kag-builder ----------------#
+  id: '3'
+kag_builder_pipeline:
+  chain:
+    type: unstructured_builder_chain
+    extractor:
+      type: schema_constraint_extractor
+      llm: *chat_llm
+      ner_prompt:
+        type: kgtest_ner
+      std_prompt:
+        type: default_std
+      triple_prompt:
+        type: kgtest_triple
+    reader:
+      type: md_reader
+    post_processor:
+      type: kag_post_processor
+      similarity_threshold: 0.85   # 名称相似度 ≥ 0.85 视为同一实体
+      enable_alias_link: true
+    splitter:
+      type: length_splitter
+      split_length: 8000      # 关键：放大到 8000，让一份 8D 大概率落在 1~3 个 chunk
+      window_length: 500      # 邻 chunk 留 500 字符重叠，跨段关系不丢
+    vectorizer:
+      type: batch_vectorizer
+      vectorize_model: *vectorize_model
+    writer:
+      type: kg_writer
+  num_threads_per_chain: 1
+  num_chains: 4
+  scanner:
+    type: file_scanner

@@ -1,0 +1,64 @@
+# ===== Python 虚拟环境 =====
+kag-dev/
+venv/
+.venv/
+env/
+ENV/
+
+# ===== Python 编译产物 =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ===== IDE & 编辑器 =====
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ===== 测试与覆盖率 =====
+.pytest_cache/
+.coverage
+.tox/
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# ===== Jupyter =====
+.ipynb_checkpoints/
+
+# ===== 日志与临时文件 =====
+*.log
+logs/
+*.tmp
+*.bak
+
+# ===== KAG 运行产物 =====
+ckpt/
+builder/ckpt/
+solver/ckpt/
+
+# ===== 环境变量与密钥 =====
+.env
+.env.local
+*.key
+*.pem
+
+# ===== 数据库与数据文件 =====
+*.db
+*.sqlite3
+*.sqlite
+
+# ===== 操作系统 =====
+.DS_Store
+Thumbs.db
+desktop.ini

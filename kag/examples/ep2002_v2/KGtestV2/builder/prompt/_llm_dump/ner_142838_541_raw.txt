@@ -1,0 +1,202 @@
+[
+  {
+    "category": "EightDReport",
+    "properties": {
+      "name": "8D_佛山3号线T15列车制动不缓解调查报告_清洗版",
+      "reportNo": "600815951",
+      "issueTitle": "T15车制动不缓解",
+      "ownerName": "俞士剑",
+      "ownerRole": "质量",
+      "d4RootCauseSummary": "EP2002阀HOLD2电磁阀漏气",
+      "d5PermanentCorrectionSummary": "建议网络修改逻辑，采用实际主G阀发送信号",
+      "rootCause": [
+        "EP2002阀HOLD2电磁阀漏气"
+      ],
+      "correctiveAction": [
+        "建议网络修改逻辑，采用实际主G阀发送信号"
+      ],
+      "affectedPart": [
+        "HOLD2电磁阀"
+      ],
+      "affectedProduct": [
+        "佛山3号线T15列车制动系统(EP2002阀)"
+      ],
+      "sourceEvent": [
+        "T15车制动不缓解事件"
+      ],
+      "responsibleOrg": [
+        "质量"
+      ]
+    }
+  },
+  {
+    "category": "ProductModel",
+    "properties": {
+      "name": "EP2002阀",
+      "modelCode": "EP2002",
+      "manufacturerName": "克诺尔",
+      "hasBOMPart": [
+        "HOLD2电磁阀"
+      ]
+    }
+  },
+  {
+    "category": "ProductInstance",
+    "properties": {
+      "name": "佛山3号线T15列车制动系统(EP2002阀)",
+      "serialNumber": "2120124FOE",
+      "ownerName": "佛山地铁",
+      "siteCity": "佛山",
+      "siteCountry": "中国",
+      "basedOnModel": [
+        "EP2002阀"
+      ],
+      "ownedBy": [
+        "佛山地铁"
+      ],
+      "has8D": [
+        "8D_佛山3号线T15列车制动不缓解调查报告_清洗版"
+      ],
+      "hasEvent": [
+        "T15车制动不缓解事件"
+      ]
+    }
+  },
+  {
+    "category": "BOMPart",
+    "properties": {
+      "name": "HOLD2电磁阀",
+      "partNo": "S7029/FOE01",
+      "partType": "电磁阀",
+      "belongsToModel": [
+        "EP2002阀"
+      ],
+      "hasFailureMode": [
+        "电磁阀漏气"
+      ]
+    }
+  },
+  {
+    "category": "FailureMode",
+    "properties": {
+      "name": "电磁阀漏气",
+      "modeCode": "FM-EMVALVE-LEAK"
+    }
+  },
+  {
+    "category": "ProductEvent",
+    "properties": {
+      "name": "T15车制动不缓解事件",
+      "eventTime": "2022/10/9 16:57",
+      "symptom": "制动不缓解",
+      "eventType": "故障",
+      "reporterName": "行调",
+      "happenedOn": [
+        "佛山3号线T15列车制动系统(EP2002阀)"
+      ],
+      "relatedFailureMode": [
+        "电磁阀漏气"
+      ],
+      "relatedPart": [
+        "HOLD2电磁阀"
+      ],
+      "has8DReport": [
+        "8D_佛山3号线T15列车制动不缓解调查报告_清洗版"
+      ]
+    }
+  },
+  {
+    "category": "CauseItem",
+    "properties": {
+      "name": "EP2002阀HOLD2电磁阀漏气",
+      "title": "EP2002阀HOLD2电磁阀漏气",
+      "causeType": "根本原因",
+      "isVerified": "true",
+      "evidence": "HOLD2电磁阀内部漏气严重，实际2口压力仅为3bar，与期望压力9bar相差较大，确认HOLD2电磁阀失效。",
+      "belongsToReport": [
+        "8D_佛山3号线T15列车制动不缓解调查报告_清洗版"
+      ],
+      "relatedFailureMode": [
+        "电磁阀漏气"
+      ],
+      "relatedPart": [
+        "HOLD2电磁阀"
+      ]
+    }
+  },
+  {
+    "category": "ActionItem",
+    "properties": {
+      "name": "建议网络修改逻辑，采用实际主G阀发送信号",
+      "title": "建议网络修改逻辑，采用实际主G阀发送信号",
+      "actionType": "纠正措施D5",
+      "status": "待定",
+      "evidence": "建议网络修改逻辑，采用实际主G阀发送信号。",
+      "belongsToReport": [
+        "8D_佛山3号线T15列车制动不缓解调查报告_清洗版"
+      ],
+      "targetProduct": [
+        "佛山3号线T15列车制动系统(EP2002阀)"
+      ],
+      "verifiesCause": [
+        "EP2002阀HOLD2电磁阀漏气"
+      ]
+    }
+  },
+  {
+    "category": "Organization",
+    "properties": {
+      "name": "克诺尔",
+      "orgType": "制造商"
+    }
+  },
+  {
+    "category": "Organization",
+    "properties": {
+      "name": "中车四方",
+      "orgType": "客户"
+    }
+  },
+  {
+    "category": "Organization",
+    "properties": {
+      "name": "佛山地铁",
+      "orgType": "运营商"
+    }
+  },
+  {
+    "category": "Organization",
+    "properties": {
+      "name": "质量",
+      "orgType": "内部部门"
+    }
+  },
+  {
+    "category": "Organization",
+    "properties": {
+      "name": "项目",
+      "orgType": "内部部门"
+    }
+  },
+  {
+    "category": "Organization",
+    "properties": {
+      "name": "电子系统",
+      "orgType": "内部部门"
+    }
+  },
+  {
+    "category": "Organization",
+    "properties": {
+      "name": "维修评估",
+      "orgType": "内部部门"
+    }
+  },
+  {
+    "category": "Organization",
+    "properties": {
+      "name": "售后",
+      "orgType": "内部部门"
+    }
+  }
+]

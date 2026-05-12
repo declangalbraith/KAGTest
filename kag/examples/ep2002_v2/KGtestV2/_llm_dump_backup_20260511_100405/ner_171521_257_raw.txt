@@ -1,0 +1,167 @@
+[
+  {
+    "category": "EightDReport",
+    "properties": {
+      "name": "关于复兴号动车供风单元干燥器故障（5228）分析报告",
+      "reportNo": "5228",
+      "issueTitle": "复兴号动车组供风单元干燥器故障",
+      "ownerName": "北京纵横机电科技有限公司",
+      "ownerRole": "制造商",
+      "d4RootCauseSummary": "初步定位失效部件为干燥器压力开关，压力开关的失效模式为不断开",
+      "d5PermanentCorrectionSummary": "2024年5月至今发生故障的车组均已现场更换压力开关",
+      "d7PreventionSummary": "无",
+      "rootCause": [
+        "压力开关的失效模式为不断开"
+      ],
+      "correctiveAction": [
+        "2024年5月至今发生故障的车组均已现场更换压力开关"
+      ],
+      "preventiveAction": null,
+      "affectedPart": [
+        "干燥器压力开关"
+      ],
+      "affectedProduct": [
+        "复兴号动车组供风单元(SN-21-44周后)"
+      ],
+      "sourceEvent": [
+        "复兴号动车组供风单元干燥器故障事件"
+      ],
+      "responsibleOrg": [
+        "北京纵横机电科技有限公司"
+      ]
+    }
+  },
+  {
+    "category": "ProductModel",
+    "properties": {
+      "name": "复兴号动车组供风单元",
+      "modelCode": "复兴号",
+      "manufacturerName": "北京纵横机电科技有限公司",
+      "manufacturer": [
+        "北京纵横机电科技有限公司"
+      ],
+      "hasBOMPart": [
+        "干燥器压力开关"
+      ]
+    }
+  },
+  {
+    "category": "ProductInstance",
+    "properties": {
+      "name": "复兴号动车组供风单元(SN-21-44周后)",
+      "serialNumber": "SN-21-44周后",
+      "ownerName": "客户",
+      "siteCity": null,
+      "siteCountry": null,
+      "siteCode": null,
+      "basedOnModel": [
+        "复兴号动车组供风单元"
+      ],
+      "ownedBy": [
+        "客户"
+      ],
+      "has8D": [
+        "关于复兴号动车供风单元干燥器故障（5228）分析报告"
+      ],
+      "hasEvent": [
+        "复兴号动车组供风单元干燥器故障事件"
+      ]
+    }
+  },
+  {
+    "category": "BOMPart",
+    "properties": {
+      "name": "干燥器压力开关",
+      "partNo": null,
+      "positionCode": "干燥器阀板支架位置",
+      "partType": "压力开关",
+      "belongsToModel": [
+        "复兴号动车组供风单元"
+      ],
+      "hasFailureMode": [
+        "不断开"
+      ]
+    }
+  },
+  {
+    "category": "FailureMode",
+    "properties": {
+      "name": "不断开",
+      "modeCode": "FM-DISCONNECT-FAILURE"
+    }
+  },
+  {
+    "category": "ProductEvent",
+    "properties": {
+      "name": "复兴号动车组供风单元干燥器故障事件",
+      "eventTime": "2024年5月至今",
+      "symptom": "供风单元频繁报干燥器故障",
+      "eventType": "故障",
+      "reporterName": null,
+      "happenedOn": [
+        "复兴号动车组供风单元(SN-21-44周后)"
+      ],
+      "relatedFailureMode": [
+        "不断开"
+      ],
+      "relatedPart": [
+        "干燥器压力开关"
+      ],
+      "has8DReport": [
+        "关于复兴号动车供风单元干燥器故障（5228）分析报告"
+      ],
+      "responsibleOrg": null
+    }
+  },
+  {
+    "category": "CauseItem",
+    "properties": {
+      "name": "压力开关的失效模式为不断开",
+      "title": "压力开关的失效模式为不断开",
+      "causeType": "根本原因",
+      "evidence": "初步定位失效部件为干燥器压力开关，压力开关的失效模式为不断开",
+      "belongsToReport": [
+        "关于复兴号动车供风单元干燥器故障（5228）分析报告"
+      ],
+      "relatedFailureMode": [
+        "不断开"
+      ],
+      "relatedPart": [
+        "干燥器压力开关"
+      ]
+    }
+  },
+  {
+    "category": "ActionItem",
+    "properties": {
+      "name": "2024年5月至今发生故障的车组均已现场更换压力开关",
+      "title": "2024年5月至今发生故障的车组均已现场更换压力开关",
+      "actionType": "纠正措施D5",
+      "status": "已完成",
+      "evidence": "2024年5月至今发生故障的车组均已现场更换压力开关，更换压力开关后，从未出现过再次发生故障的情况",
+      "belongsToReport": [
+        "关于复兴号动车供风单元干燥器故障（5228）分析报告"
+      ],
+      "verifiesCause": [
+        "压力开关的失效模式为不断开"
+      ],
+      "targetPart": [
+        "干燥器压力开关"
+      ]
+    }
+  },
+  {
+    "category": "Organization",
+    "properties": {
+      "name": "北京纵横机电科技有限公司",
+      "orgType": "制造商"
+    }
+  },
+  {
+    "category": "Organization",
+    "properties": {
+      "name": "德国巴士德",
+      "orgType": "供应商"
+    }
+  }
+]

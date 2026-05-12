@@ -1,0 +1,122 @@
+[
+  {
+    "category": "EightDReport",
+    "name": "复兴号动车供风单元干燥器故障（5228）分析报告",
+    "properties": {
+      "reportNo": "5228",
+      "issueTitle": "复兴号动车供风单元干燥器压力开关NBR隔膜变形导致卡滞故障",
+      "ownerName": "未明确",
+      "ownerRole": "未明确",
+      "d4RootCauseSummary": "NBR隔膜直径、高度、硬度变化，安装后压缩量增加以及高温综合因素造成隔膜变形",
+      "d5PermanentCorrectionSummary": "选用SUCO品牌的金触点压力开关",
+      "d7PreventionSummary": "对已交付供风单元全部更新替代压力开关"
+    }
+  },
+  {
+    "category": "ProductModel",
+    "name": "复兴号动车供风单元",
+    "properties": {
+      "modelCode": "未明确"
+    }
+  },
+  {
+    "category": "ProductInstance",
+    "name": "复兴号动车供风单元",
+    "properties": {
+      "serialNumber": "未明确",
+      "ownerName": "未明确",
+      "siteCountry": "未明确",
+      "siteCity": "未明确"
+    }
+  },
+  {
+    "category": "BOMPart",
+    "name": "压力开关NBR隔膜",
+    "properties": {
+      "partNo": "未明确",
+      "partType": "隔膜"
+    }
+  },
+  {
+    "category": "FailureMode",
+    "name": "隔膜变形",
+    "properties": {
+      "modeCode": "FM-MEMBRANE-DEFORMATION"
+    }
+  },
+  {
+    "category": "ProductEvent",
+    "name": "复兴号动车供风单元干燥器压力开关故障事件",
+    "properties": {
+      "eventTime": "未明确",
+      "symptom": "接通后不断开",
+      "eventType": "故障",
+      "reporterName": "未明确"
+    }
+  },
+  {
+    "category": "CauseItem",
+    "name": "NBR隔膜直径、高度、硬度变化，安装后压缩量增加以及高温综合因素造成隔膜变形",
+    "properties": {
+      "title": "NBR隔膜直径、高度、硬度变化，安装后压缩量增加以及高温综合因素造成隔膜变形",
+      "causeType": "根本原因",
+      "isVerified": "true",
+      "evidence": "复兴号动车供风单元干燥器压力开关NBR隔膜直径、高度、硬度变化，安装后压缩量增加以及高温综合因素造成隔膜变形，隔膜变形导致堵塞进气孔，与壳体内腔之间形成密闭空间导致卡滞故障的产生。"
+    }
+  },
+  {
+    "category": "ActionItem",
+    "name": "选用SUCO品牌的金触点压力开关",
+    "properties": {
+      "title": "选用SUCO品牌的金触点压力开关",
+      "actionType": "纠正措施D5",
+      "status": "已完成",
+      "evidence": "综上所述，我司长期替代方案拟选用SUCO品牌的金触点压力开关。"
+    }
+  },
+  {
+    "category": "ActionItem",
+    "name": "对已交付供风单元全部更新替代压力开关",
+    "properties": {
+      "title": "对已交付供风单元全部更新替代压力开关",
+      "actionType": "预防措施D7",
+      "status": "计划中",
+      "evidence": "对已交付供风单元全部更新替代压力开关。"
+    }
+  },
+  {
+    "category": "Organization",
+    "name": "我司",
+    "properties": {
+      "orgType": "制造商"
+    }
+  },
+  {
+    "category": "Organization",
+    "name": "工业和信息化部电子第五研究所",
+    "properties": {
+      "orgType": "第三方分析机构"
+    }
+  },
+  {
+    "category": "Organization",
+    "name": "KB欧洲试验室",
+    "properties": {
+      "orgType": "第三方分析机构"
+    }
+  },
+  {
+    "category": "Organization",
+    "name": "SUCO",
+    "properties": {
+      "orgType": "制造商"
+    }
+  },
+  {
+    "category": "Organization",
+    "name": "Barksdale",
+    "properties": {
+      "orgType": "制造商"
+    }
+  }
+]

@@ -1,0 +1,93 @@
+[
+  {
+    "category": "EightDReport",
+    "name": "关于复兴号动车供风单元干燥器故障（5228）分析报告",
+    "properties": {
+      "reportNo": "5228",
+      "issueTitle": "复兴号动车组供风单元干燥器故障",
+      "ownerName": "北京纵横机电科技有限公司",
+      "ownerRole": "制造商",
+      "d4RootCauseSummary": "初步定位失效部件为干燥器压力开关，压力开关的失效模式为不断开",
+      "d5PermanentCorrectionSummary": "2024年5月至今发生故障的车组均已现场更换压力开关",
+      "d7PreventionSummary": "无"
+    }
+  },
+  {
+    "category": "ProductModel",
+    "name": "复兴号动车组供风单元",
+    "properties": {
+      "modelCode": "复兴号",
+      "manufacturerName": "北京纵横机电科技有限公司"
+    }
+  },
+  {
+    "category": "ProductInstance",
+    "name": "复兴号动车组供风单元(SN-21-44周后)",
+    "properties": {
+      "serialNumber": "SN-21-44周后",
+      "ownerName": "客户",
+      "siteCity": null,
+      "siteCountry": null,
+      "siteCode": null
+    }
+  },
+  {
+    "category": "BOMPart",
+    "name": "干燥器压力开关",
+    "properties": {
+      "partNo": null,
+      "positionCode": "干燥器阀板支架位置",
+      "partType": "压力开关"
+    }
+  },
+  {
+    "category": "FailureMode",
+    "name": "不断开",
+    "properties": {
+      "modeCode": "FM-DISCONNECT-FAILURE"
+    }
+  },
+  {
+    "category": "ProductEvent",
+    "name": "复兴号动车组供风单元干燥器故障事件",
+    "properties": {
+      "eventTime": "2024年5月至今",
+      "symptom": "供风单元频繁报干燥器故障",
+      "eventType": "故障",
+      "reporterName": null
+    }
+  },
+  {
+    "category": "CauseItem",
+    "name": "压力开关的失效模式为不断开",
+    "properties": {
+      "title": "压力开关的失效模式为不断开",
+      "causeType": "根本原因",
+      "evidence": "初步定位失效部件为干燥器压力开关，压力开关的失效模式为不断开"
+    }
+  },
+  {
+    "category": "ActionItem",
+    "name": "2024年5月至今发生故障的车组均已现场更换压力开关",
+    "properties": {
+      "title": "2024年5月至今发生故障的车组均已现场更换压力开关",
+      "actionType": "纠正措施D5",
+      "status": "已完成",
+      "evidence": "2024年5月至今发生故障的车组均已现场更换压力开关，更换压力开关后，从未出现过再次发生故障的情况"
+    }
+  },
+  {
+    "category": "Organization",
+    "name": "北京纵横机电科技有限公司",
+    "properties": {
+      "orgType": "制造商"
+    }
+  },
+  {
+    "category": "Organization",
+    "name": "德国巴士德",
+    "properties": {
+      "orgType": "供应商"
+    }
+  }
+]

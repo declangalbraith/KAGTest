@@ -1,0 +1,132 @@
+[
+  {
+    "category": "EightDReport",
+    "name": "复兴号动车供风单元干燥器故障（5228）分析报告",
+    "properties": {
+      "reportNo": "5228",
+      "issueTitle": "复兴号动车供风单元干燥器故障",
+      "ownerName": "北京纵横机电科技有限公司",
+      "ownerRole": "制造商",
+      "d4RootCauseSummary": "NBR隔膜变形导致堵塞进气孔，与壳体内腔之间形成密闭空间导致卡滞故障的产生",
+      "d5PermanentCorrectionSummary": "对已交付供风单元全部更新替代压力开关",
+      "d7PreventionSummary": "对新造和检修出厂产品切换SUCO金触点压力开关"
+    }
+  },
+  {
+    "category": "ProductModel",
+    "name": "复兴号动车组供风单元",
+    "properties": {
+      "modelCode": "无明确型号代码",
+      "manufacturerName": "北京纵横机电科技有限公司"
+    }
+  },
+  {
+    "category": "ProductInstance",
+    "name": "复兴号动车组供风单元",
+    "properties": {
+      "serialNumber": "无明确序列号",
+      "ownerName": "客户",
+      "siteCity": "无明确城市",
+      "siteCountry": "中国"
+    }
+  },
+  {
+    "category": "BOMPart",
+    "name": "干燥器压力开关",
+    "properties": {
+      "partNo": "无明确部件号",
+      "positionCode": "干燥器阀板支架位置",
+      "partType": "压力开关"
+    }
+  },
+  {
+    "category": "BOMPart",
+    "name": "干燥器故障诊断单元",
+    "properties": {
+      "partNo": "无明确部件号",
+      "partType": "诊断单元"
+    }
+  },
+  {
+    "category": "FailureMode",
+    "name": "压力开关不断开",
+    "properties": {
+      "modeCode": "FM-PS-NODISCONNECT"
+    }
+  },
+  {
+    "category": "ProductEvent",
+    "name": "复兴号动车供风单元干燥器故障（5228）事件",
+    "properties": {
+      "eventTime": "2024-05-01",
+      "symptom": "干燥器压力开关1、3脚常闭，不符合图纸要求",
+      "eventType": "故障",
+      "reporterName": "无明确上报人"
+    }
+  },
+  {
+    "category": "CauseItem",
+    "name": "NBR隔膜变形导致堵塞进气孔，与壳体内腔之间形成密闭空间导致卡滞故障的产生",
+    "properties": {
+      "title": "NBR隔膜变形导致堵塞进气孔，与壳体内腔之间形成密闭空间导致卡滞故障的产生",
+      "causeType": "D4根因",
+      "isVerified": "true",
+      "evidence": "通过分析和试验确认NBR隔膜变形导致堵塞进气孔，与壳体内腔之间形成密闭空间导致卡滞故障的产生。"
+    }
+  },
+  {
+    "category": "ActionItem",
+    "name": "对已交付供风单元全部更新替代压力开关",
+    "properties": {
+      "title": "对已交付供风单元全部更新替代压力开关",
+      "actionType": "纠正措施D5",
+      "status": "计划中",
+      "evidence": "对已交付供风单元全部更新替代压力开关。"
+    }
+  },
+  {
+    "category": "ActionItem",
+    "name": "对新造和检修出厂产品切换SUCO金触点压力开关",
+    "properties": {
+      "title": "对新造和检修出厂产品切换SUCO金触点压力开关",
+      "actionType": "预防措施D7",
+      "status": "计划中",
+      "evidence": "对新造和检修出厂产品切换SUCO金触点压力开关，预计2024年12月开始。"
+    }
+  },
+  {
+    "category": "Organization",
+    "name": "北京纵横机电科技有限公司",
+    "properties": {
+      "orgType": "制造商"
+    }
+  },
+  {
+    "category": "Organization",
+    "name": "客户",
+    "properties": {
+      "orgType": "客户"
+    }
+  },
+  {
+    "category": "Organization",
+    "name": "德国巴士德（Barksdale Control Products GmbH）",
+    "properties": {
+      "orgType": "供应商"
+    }
+  },
+  {
+    "category": "Organization",
+    "name": "工业和信息化部电子第五研究所",
+    "properties": {
+      "orgType": "供应商"
+    }
+  },
+  {
+    "category": "Organization",
+    "name": "SUCO",
+    "properties": {
+      "orgType": "供应商"
+    }
+  }
+]

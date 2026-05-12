@@ -1,0 +1,178 @@
+#------------ LLM & Embedding ----------------#
+openie_llm: &openie_llm
+  type: maas
+  base_url: https://api.siliconflow.cn/v1
+  api_key: sk-yrwobvrcxtpyxaqecbqqkqoacxcxpexeiteyywznyiebavng
+  model: Qwen/Qwen2.5-72B-Instruct
+  enable_check: false
+
+chat_llm: &chat_llm
+  type: maas
+  base_url: https://api.siliconflow.cn/v1
+  api_key: sk-yrwobvrcxtpyxaqecbqqkqoacxcxpexeiteyywznyiebavng
+  model: Qwen/Qwen2.5-72B-Instruct
+  enable_check: false
+
+vectorize_model: &vectorize_model
+  name: bge-m3
+  type: openai
+  base_url: https://api.siliconflow.cn/v1
+  api_key: sk-yrwobvrcxtpyxaqecbqqkqoacxcxpexeiteyywznyiebavng
+  model: BAAI/bge-m3
+  vector_dimensions: 1024
+  enable_check: false
+vectorizer: *vectorize_model
+
+log:
+  level: INFO
+
+#------------ project ----------------#
+project:
+  biz_scene: default
+  host_addr: http://117.62.232.51:18887
+  language: zh
+  namespace: KGtestV2
+  id: '4'
+
+#------------ kag-builder ----------------#
+kag_builder_pipeline:
+  chain:
+    type: unstructured_builder_chain
+    reader:
+      type: txt_reader              # 不做标题预切,整篇文本交给 splitter 控制
+    splitter:
+      type: length_splitter
+      split_length: 8000            # 8D报告清洗后内容不多，直接一个chunk
+      window_length: 300            # 邻 chunk 重叠 500 字,跨段关系不丢
+    extractor:
+      type: kgtest_schema_constraint_extractor  # builder/prompt/kgtest_extractor.py，复用 NER 五元组写图
+      llm: *chat_llm
+      ner_prompt:
+        type: kgtest_ner            # 自定义 NER prompt(builder/prompt/ner.py)
+      std_prompt:
+        type: default_std
+      relation_prompt:
+        type: kgtest_triple         # 无 NER 缓存时兜底二次抽取；正常由 NER 缓存直接写边
+    post_processor:
+      type: kag_post_processor
+    vectorizer:
+      type: batch_vectorizer
+      vectorize_model: *vectorize_model
+    writer:
+      type: kg_writer
+  num_threads_per_chain: 1
+  num_chains: 1                     # 串行,避免 SiliconFlow 限流
+  scanner:
+    type: file_scanner
+
+#------------ kag-solver ----------------#
+search_api: &search_api
+  type: openspg_search_api
+
+graph_api: &graph_api
+  type: openspg_graph_api
+
+kg_cs: &kg_cs
+  type: kg_cs_open_spg
+  priority: 0
+  path_select:
+    type: exact_one_hop_select
+    graph_api: *graph_api
+    search_api: *search_api
+  entity_linking:
+    type: entity_linking
+    graph_api: *graph_api
+    search_api: *search_api
+    recognition_threshold: 0.9
+    exclude_types:
+      - Chunk
+      - AtomicQuery
+      - KnowledgeUnit
+      - Summary
+      - Outline
+      - Doc
+
+kg_fr: &kg_fr
+  type: kg_fr_knowledge_unit
+  top_k: 20
+  graph_api: *graph_api
+  search_api: *search_api
+  vectorize_model: *vectorize_model
+  path_select:
+    type: fuzzy_one_hop_select
+    llm_client: *chat_llm
+    graph_api: *graph_api
+    search_api: *search_api
+  ppr_chunk_retriever_tool:
+    type: ppr_chunk_retriever
+    llm_client: *chat_llm
+    graph_api: *graph_api
+    search_api: *search_api
+  entity_linking:
+    type: entity_linking
+    graph_api: *graph_api
+    search_api: *search_api
+    recognition_threshold: 0.8
+    exclude_types:
+      - Chunk
+      - AtomicQuery
+      - KnowledgeUnit
+      - Summary
+      - Outline
+      - Doc
+
+rc: &rc
+  type: rc_open_spg
+  vector_chunk_retriever:
+    type: vector_chunk_retriever
+    vectorize_model: *vectorize_model
+    score_threshold: 0.5
+    search_api: *search_api
+  graph_api: *graph_api
+  search_api: *search_api
+  vectorize_model: *vectorize_model
+  top_k: 20
+
+kag_hybrid_executor: &kag_hybrid_executor_conf
+  type: kag_hybrid_retrieval_executor
+  retrievers:
+    - *kg_cs
+    - *kg_fr
+    - *rc
+  merger:
+    type: kag_merger
+  enable_summary: true
+
+kag_output_executor: &kag_output_executor_conf
+  type: kag_output_executor
+  llm_module: *chat_llm
+
+kag_deduce_executor: &kag_deduce_executor_conf
+  type: kag_deduce_executor
+  llm_module: *chat_llm
+
+py_code_based_math_executor: &py_code_based_math_executor_conf
+  type: py_code_based_math_executor
+  llm: *chat_llm
+
+kag_solver_pipeline:
+  type: kag_static_pipeline
+  planner:
+    type: lf_kag_static_planner
+    llm: *chat_llm
+    plan_prompt:
+      type: default_lf_static_planning
+    rewrite_prompt:
+      type: default_rewrite_sub_task_query
+  executors:
+    - *kag_hybrid_executor_conf
+    - *py_code_based_math_executor_conf
+    - *kag_deduce_executor_conf
+    - *kag_output_executor_conf
+  generator:
+    type: llm_generator
+    llm_client: *chat_llm
+    generated_prompt:
+      type: default_refer_generator_prompt
+    enable_ref: true
+

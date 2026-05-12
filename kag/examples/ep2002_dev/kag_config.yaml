@@ -1,0 +1,63 @@
+#------------ project ----------------#
+openie_llm: &openie_llm
+  type: maas
+  base_url: https://api.minimaxi.com/v1       
+  api_key: sk-cp-m5xCBKAh7ZAGfK48XEumHmeScW68ToJBVAD7IEi0qWGXtY79sJsx5a6tBykhqv0knlxJCJE4gsaHzyX_f5bTs2IVm2HxweuhqLp4GYxUhtddKYt9brd48a4
+  model: MiniMax-M2.7
+  enable_check: false
+
+chat_llm: &chat_llm
+  type: maas
+  base_url: https://api.minimaxi.com/v1
+  api_key: sk-cp-m5xCBKAh7ZAGfK48XEumHmeScW68ToJBVAD7IEi0qWGXtY79sJsx5a6tBykhqv0knlxJCJE4gsaHzyX_f5bTs2IVm2HxweuhqLp4GYxUhtddKYt9brd48a4
+  model: MiniMax-M2.7
+  enable_check: false
+
+vectorize_model: &vectorize_model
+  type: openai
+  base_url: https://api.siliconflow.cn/v1
+  api_key: sk-yrwobvrcxtpyxaqecbqqkqoacxcxpexeiteyywznyiebavng
+  model: Qwen/Qwen3-Embedding-4B
+  vector_dimensions: 1024
+  enable_check: false
+vectorizer: *vectorize_model
+
+log:
+  level: INFO
+
+project:
+  biz_scene: default
+  host_addr: http://117.62.232.51:18887
+  language: zh
+  namespace: KGtestep2002
+
+#------------ kag-builder ----------------#
+kag_builder_pipeline:
+  chain:
+    type: unstructured_builder_chain
+    extractor:
+      type: schema_constraint_extractor
+      llm: *chat_llm
+      ner_prompt:
+        type: default_ner
+      std_prompt:
+        type: default_std
+      triple_prompt:
+        type: default_triple
+    reader:
+      type: md_reader
+    post_processor:
+      type: kag_post_processor
+    splitter:
+      type: outline_splitter
+      split_length: 2000
+      window_length: 0
+    vectorizer:
+      type: batch_vectorizer
+      vectorize_model: *vectorize_model
+    writer:
+      type: kg_writer
+  num_threads_per_chain: 1
+  num_chains: 4
+  scanner:
+    type: file_scanner

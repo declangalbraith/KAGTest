@@ -1,0 +1,270 @@
+[
+  {
+    "category": "EightDReport",
+    "name": "EP2002阀二级调节器压力超差故障分析报告",
+    "properties": {
+      "reportNo": "600812585",
+      "issueTitle": "EP2002阀二级调节器压力超差故障",
+      "reportStatus": "纠正措施验证和最终会议为 TBD，报告未完全关闭",
+      "ownerName": "王怀亮",
+      "ownerRole": "项目经理",
+      "d4RootCauseSummary": "塑料活塞销存在气孔导致其强度变弱",
+      "d5PermanentCorrectionSummary": "供应商库存活塞销100%外观检, EP2002阀出货前增加二级调节器压力检测项点, 供应商更新活塞销生产模具及排气改善方案",
+      "d7PreventionSummary": null
+    }
+  },
+  {
+    "category": "ProductModel",
+    "name": "EP2002阀",
+    "properties": {
+      "modelCode": "EP2002",
+      "productCategory": "制动控制系统",
+      "productLine": null,
+      "productFamily": null,
+      "manufacturerName": "克诺尔"
+    }
+  },
+  {
+    "category": "ProductInstance",
+    "name": "深圳14号线 T030 车EP2002阀(SN-2207134SMF)",
+    "properties": {
+      "serialNumber": "2207134SMF",
+      "ownerName": "深圳地铁",
+      "siteCity": null,
+      "siteCountry": "中国"
+    }
+  },
+  {
+    "category": "ProductInstance",
+    "name": "深圳14号线 T043 车EP2002阀(SN-2208145SMF)",
+    "properties": {
+      "serialNumber": "2208145SMF",
+      "ownerName": "深圳地铁",
+      "siteCity": null,
+      "siteCountry": "中国"
+    }
+  },
+  {
+    "category": "ProductInstance",
+    "name": "深圳14号线 T038 车EP2002阀(SN-2208138SMF)",
+    "properties": {
+      "serialNumber": "2208138SMF",
+      "ownerName": "深圳地铁",
+      "siteCity": null,
+      "siteCountry": "中国"
+    }
+  },
+  {
+    "category": "ProductInstance",
+    "name": "兰州2号线 T009 车EP2002阀(SN-2208057LZP)",
+    "properties": {
+      "serialNumber": "2208057LZP",
+      "ownerName": "兰州地铁",
+      "siteCity": null,
+      "siteCountry": "中国"
+    }
+  },
+  {
+    "category": "ProductInstance",
+    "name": "兰州2号线 T009 车EP2002阀(SN-2208059LZP)",
+    "properties": {
+      "serialNumber": "2208059LZP",
+      "ownerName": "兰州地铁",
+      "siteCity": null,
+      "siteCountry": "中国"
+    }
+  },
+  {
+    "category": "BOMPart",
+    "name": "活塞销",
+    "properties": {
+      "partNo": null,
+      "positionCode": null,
+      "partType": "活塞销"
+    }
+  },
+  {
+    "category": "BOMPart",
+    "name": "二级调节器",
+    "properties": {
+      "partNo": null,
+      "positionCode": null,
+      "partType": "二级调节器"
+    }
+  },
+  {
+    "category": "BOMPart",
+    "name": "弹簧",
+    "properties": {
+      "partNo": null,
+      "positionCode": null,
+      "partType": "弹簧"
+    }
+  },
+  {
+    "category": "BOMPart",
+    "name": "调节螺母",
+    "properties": {
+      "partNo": null,
+      "positionCode": null,
+      "partType": "调节螺母"
+    }
+  },
+  {
+    "category": "BOMPart",
+    "name": "阀座",
+    "properties": {
+      "partNo": null,
+      "positionCode": null,
+      "partType": "阀座"
+    }
+  },
+  {
+    "category": "FailureMode",
+    "name": "二级调节器压力超差",
+    "properties": {
+      "modeCode": "FM-REGULATOR-PRESSURE-OUT-OF-RANGE"
+    }
+  },
+  {
+    "category": "ProductEvent",
+    "name": "深圳14号线 T030 车EP2002阀压力超差事件",
+    "properties": {
+      "severity": null,
+      "symptom": "首次自检时报出 secondary regulator out of range（二级调节器压力超差）故障",
+      "eventType": "故障",
+      "eventCode": null,
+      "reporterName": null,
+      "status": "失效",
+      "eventId": "FC-001"
+    }
+  },
+  {
+    "category": "ProductEvent",
+    "name": "深圳14号线 T043 车EP2002阀压力超差事件",
+    "properties": {
+      "severity": null,
+      "symptom": "首次自检时报出 secondary regulator out of range（二级调节器压力超差）故障",
+      "eventType": "故障",
+      "eventCode": null,
+      "reporterName": null,
+      "status": "失效",
+      "eventId": "FC-002"
+    }
+  },
+  {
+    "category": "ProductEvent",
+    "name": "深圳14号线 T038 车EP2002阀压力超差事件",
+    "properties": {
+      "severity": null,
+      "symptom": "首次自检时报出 secondary regulator out of range（二级调节器压力超差）故障",
+      "eventType": "故障",
+      "eventCode": null,
+      "reporterName": null,
+      "status": "失效",
+      "eventId": "FC-003"
+    }
+  },
+  {
+    "category": "ProductEvent",
+    "name": "兰州2号线 T009 车EP2002阀压力超差事件",
+    "properties": {
+      "severity": null,
+      "symptom": "首次自检时报出 secondary regulator out of range（二级调节器压力超差）故障",
+      "eventType": "故障",
+      "eventCode": null,
+      "reporterName": null,
+      "status": "失效",
+      "eventId": "FC-004"
+    }
+  },
+  {
+    "category": "ProductEvent",
+    "name": "兰州2号线 T009 车EP2002阀压力超差事件",
+    "properties": {
+      "severity": null,
+      "symptom": "首次自检时报出 secondary regulator out of range（二级调节器压力超差）故障",
+      "eventType": "故障",
+      "eventCode": null,
+      "reporterName": null,
+      "status": "失效",
+      "eventId": "FC-005"
+    }
+  },
+  {
+    "category": "CauseItem",
+    "name": "塑料活塞销存在气孔",
+    "properties": {
+      "title": "塑料活塞销存在气孔",
+      "causeType": "根本原因",
+      "evidence": "D4.8 根本原因和因果链：根本原因：塑料活塞销存在气孔导致其强度变弱。",
+      "causeId": null,
+      "isVerified": "true"
+    }
+  },
+  {
+    "category": "ActionItem",
+    "name": "供应商库存活塞销100%外观检",
+    "properties": {
+      "title": "供应商库存活塞销100%外观检",
+      "actionType": "纠正措施D5",
+      "status": "已定义",
+      "evidence": "D6 纠正措施1：对供应商库存活塞销进行100%外观检。"
+    }
+  },
+  {
+    "category": "ActionItem",
+    "name": "EP2002阀出货前增加二级调节器压力检测项点",
+    "properties": {
+      "title": "EP2002阀出货前增加二级调节器压力检测项点",
+      "actionType": "纠正措施D5",
+      "status": "已定义",
+      "evidence": "D6 纠正措施2：克诺尔苏州对EP2002阀出货前增加相关检测项点，再次进行系统测试，二级调节器压力不达标的全部返工。"
+    }
+  },
+  {
+    "category": "ActionItem",
+    "name": "供应商更新活塞销生产模具及排气改善方案",
+    "properties": {
+      "title": "供应商更新活塞销生产模具及排气改善方案",
+      "actionType": "纠正措施D5",
+      "status": "已定义",
+      "evidence": "D6 纠正措施3：供应商更新活塞销生产模具及排气改善方案，减少产品气孔风险。"
+    }
+  },
+  {
+    "category": "Organization",
+    "name": "中车长客",
+    "properties": {
+      "orgType": "客户"
+    }
+  },
+  {
+    "category": "Organization",
+    "name": "兰州地铁",
+    "properties": {
+      "orgType": "运营商"
+    }
+  },
+  {
+    "category": "Organization",
+    "name": "深圳地铁",
+    "properties": {
+      "orgType": "运营商"
+    }
+  },
+  {
+    "category": "Organization",
+    "name": "克诺尔苏州",
+    "properties": {
+      "orgType": "责任组织"
+    }
+  },
+  {
+    "category": "Organization",
+    "name": "供应商",
+    "properties": {
+      "orgType": "责任组织"
+    }
+  }
+]

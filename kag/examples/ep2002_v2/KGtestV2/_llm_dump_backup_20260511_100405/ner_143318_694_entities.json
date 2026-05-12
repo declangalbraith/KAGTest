@@ -1,0 +1,239 @@
+[
+  {
+    "category": "EightDReport",
+    "name": "EP2002阀二级调节器压力超差故障分析报告",
+    "properties": {
+      "reportNo": "600812585",
+      "issueTitle": "EP2002阀二级调节器压力超差故障",
+      "ownerName": "王怀亮",
+      "ownerRole": "项目经理",
+      "reportStatus": "纠正措施验证和最终会议为 TBD，报告未完全关闭",
+      "d2ProblemStatement": "2022/8/19，深圳地铁14号线 T030 车在中车长客库内静调时首次上电自检失败，制动系统报 “secondary regulator out of range（二级调节器压力超差）” 故障。",
+      "d4RootCauseSummary": "塑料活塞销存在气孔导致其强度变弱，最终结果是二级调节器实际压力降低，出现二级调节器压力超差故障。",
+      "d5PermanentCorrectionSummary": "供应商库存活塞销100%外观检，EP2002阀出货前增加二级调节器压力检测项点，供应商更新活塞销生产模具及排气改善方案。",
+      "d7PreventionSummary": null
+    }
+  },
+  {
+    "category": "ProductModel",
+    "name": "EP2002阀",
+    "properties": {
+      "modelCode": "EP2002",
+      "productCategory": "制动控制系统",
+      "productLine": "兰州2号线, 深圳14号线",
+      "productFamily": null,
+      "manufacturerName": null
+    }
+  },
+  {
+    "category": "ProductInstance",
+    "name": "深圳14号线 T030 车EP2002阀(SN-2207134SMF)",
+    "properties": {
+      "serialNumber": "2207134SMF",
+      "ownerName": "中车长客",
+      "siteCity": null,
+      "siteCountry": null,
+      "siteCode": null,
+      "commissionDate": "2022/8/19",
+      "status": "失效"
+    }
+  },
+  {
+    "category": "ProductInstance",
+    "name": "深圳14号线 T043 车EP2002阀(SN-2208145SMF)",
+    "properties": {
+      "serialNumber": "2208145SMF",
+      "ownerName": "中车长客",
+      "siteCity": null,
+      "siteCountry": null,
+      "siteCode": null,
+      "commissionDate": "2022/9/14",
+      "status": "失效"
+    }
+  },
+  {
+    "category": "ProductInstance",
+    "name": "深圳14号线 T038 车EP2002阀(SN-2208138SMF)",
+    "properties": {
+      "serialNumber": "2208138SMF",
+      "ownerName": "中车长客",
+      "siteCity": null,
+      "siteCountry": null,
+      "siteCode": null,
+      "commissionDate": "2022/10/20",
+      "status": "失效"
+    }
+  },
+  {
+    "category": "ProductInstance",
+    "name": "兰州2号线 T009 车EP2002阀(SN-2208057LZP)",
+    "properties": {
+      "serialNumber": "2208057LZP",
+      "ownerName": "中车长客",
+      "siteCity": null,
+      "siteCountry": null,
+      "siteCode": null,
+      "commissionDate": "2022/10/24",
+      "status": "失效"
+    }
+  },
+  {
+    "category": "ProductInstance",
+    "name": "兰州2号线 T009 车EP2002阀(SN-2208059LZP)",
+    "properties": {
+      "serialNumber": "2208059LZP",
+      "ownerName": "中车长客",
+      "siteCity": null,
+      "siteCountry": null,
+      "siteCode": null,
+      "commissionDate": "2022/10/24",
+      "status": "失效"
+    }
+  },
+  {
+    "category": "BOMPart",
+    "name": "二级调节器",
+    "properties": {
+      "partNo": null,
+      "bomLevel": null,
+      "positionCode": null,
+      "partType": "调节器"
+    }
+  },
+  {
+    "category": "BOMPart",
+    "name": "活塞销",
+    "properties": {
+      "partNo": null,
+      "bomLevel": null,
+      "positionCode": null,
+      "partType": "销"
+    }
+  },
+  {
+    "category": "BOMPart",
+    "name": "阀座",
+    "properties": {
+      "partNo": null,
+      "bomLevel": null,
+      "positionCode": null,
+      "partType": "阀座"
+    }
+  },
+  {
+    "category": "BOMPart",
+    "name": "弹簧",
+    "properties": {
+      "partNo": null,
+      "bomLevel": null,
+      "positionCode": null,
+      "partType": "弹簧"
+    }
+  },
+  {
+    "category": "BOMPart",
+    "name": "调节螺母",
+    "properties": {
+      "partNo": null,
+      "bomLevel": null,
+      "positionCode": null,
+      "partType": "螺母"
+    }
+  },
+  {
+    "category": "FailureMode",
+    "name": "二级调节器压力超差",
+    "properties": {
+      "modeCode": "FM-SECONDARY-REGULATOR-OUT-OF-RANGE"
+    }
+  },
+  {
+    "category": "ProductEvent",
+    "name": "EP2002阀二级调节器压力超差故障",
+    "properties": {
+      "severity": null,
+      "symptom": "首次自检时报出 secondary regulator out of range（二级调节器压力超差）故障",
+      "eventType": "故障",
+      "eventCode": null,
+      "reporterName": null,
+      "status": "失效",
+      "eventId": null
+    }
+  },
+  {
+    "category": "CauseItem",
+    "name": "塑料活塞销存在气孔导致其强度变弱",
+    "properties": {
+      "title": "塑料活塞销存在气孔导致其强度变弱",
+      "causeType": "根本原因",
+      "evidence": "根本原因：塑料活塞销存在气孔导致其强度变弱，最终结果是二级调节器实际压力降低，出现二级调节器压力超差故障。",
+      "causeId": null,
+      "isVerified": "true"
+    }
+  },
+  {
+    "category": "ActionItem",
+    "name": "供应商库存活塞销100%外观检",
+    "properties": {
+      "title": "供应商库存活塞销100%外观检",
+      "actionType": "纠正措施D5",
+      "status": "已定义",
+      "evidence": "对供应商库存活塞销进行100%外观检。"
+    }
+  },
+  {
+    "category": "ActionItem",
+    "name": "EP2002阀出货前增加二级调节器压力检测项点",
+    "properties": {
+      "title": "EP2002阀出货前增加二级调节器压力检测项点",
+      "actionType": "纠正措施D5",
+      "status": "已定义",
+      "evidence": "克诺尔苏州对EP2002阀出货前增加相关检测项点，再次进行系统测试，二级调节器压力不达标的全部返工。"
+    }
+  },
+  {
+    "category": "ActionItem",
+    "name": "供应商更新活塞销生产模具及排气改善方案",
+    "properties": {
+      "title": "供应商更新活塞销生产模具及排气改善方案",
+      "actionType": "纠正措施D5",
+      "status": "已定义",
+      "evidence": "供应商更新活塞销生产模具及排气改善方案，减少产品气孔风险。"
+    }
+  },
+  {
+    "category": "Organization",
+    "name": "中车长客",
+    "properties": {
+      "orgType": "客户"
+    }
+  },
+  {
+    "category": "Organization",
+    "name": "兰州地铁",
+    "properties": {
+      "orgType": "运营商"
+    }
+  },
+  {
+    "category": "Organization",
+    "name": "深圳地铁",
+    "properties": {
+      "orgType": "运营商"
+    }
+  },
+  {
+    "category": "Organization",
+    "name": "克诺尔苏州",
+    "properties": {
+      "orgType": "责任组织"
+    }
+  },
+  {
+    "category": "Organization",
+    "name": "供应商",
+    "properties": {
+      "orgType": "责任组织"
+    }
+  }
+]

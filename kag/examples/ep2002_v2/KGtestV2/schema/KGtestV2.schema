@@ -1,0 +1,224 @@
+namespace KGtestV2
+
+ProductModel(产品型号): EntityType
+	desc: 产品的设计型号(如EP2002阀)。同型号会有多台ProductInstance。注意:型号不是实例。
+	properties:
+		productLine(产品线): Text
+			index: Text
+		productFamily(产品族): Text
+			index: Text
+		modelCode(型号编码): Text
+			index: Text
+		productCategory(产品类别): Text
+			index: Text
+		manufacturerName(制造商名称): Text
+			index: Text
+	relations:
+		manufacturer(制造商): Organization
+		hasBOMPart(包含BOM件): BOMPart
+		hasBOMRoot(根BOM): BOMPart
+		hasInstance(产品实例): ProductInstance
+
+ProductInstance(产品实例): EntityType
+	desc: 一台具体出厂的实物机器,由产品序列号唯一标识,对应一个ProductModel。
+	properties:
+		serialNumber(产品序列号): Text
+			index: Text
+		assetCode(资产编码): Text
+			index: Text
+		commissionDate(启用日期): Text
+		status(状态): Text
+			index: Text
+		ownerName(所属客户名称): Text
+			index: Text
+		siteCity(所在城市): Text
+			index: Text
+		siteCountry(所在国家): Text
+		siteCode(地点编码): Text
+			index: Text
+	relations:
+		basedOnModel(对应型号): ProductModel
+		has8D(关联8D): EightDReport
+		hasInstallation(安装记录): Installation
+		hasCurrentPart(当前安装件): PartSerial
+		hasEvent(发生事件): ProductEvent
+		ownedBy(所属客户): Organization
+
+BOMPart(BOM部件): EntityType
+	desc: BOM中的设计件(如塑料活塞销/弹簧/阀座),是零件型号层面的概念,实物件用PartSerial。
+	properties:
+		partType(部件类型): Text
+			index: Text
+		partNo(设计件号): Text
+			index: Text
+		positionCode(位号): Text
+			index: Text
+		bomLevel(BOM层级): Text
+	relations:
+		parentPart(上级BOM件): BOMPart
+		fulfilledBy(对应实例件): PartSerial
+		childPart(下级BOM件): BOMPart
+		hasFailureMode(失效模式): FailureMode
+		belongsToModel(所属型号): ProductModel
+		alternativePart(替代件): BOMPart
+
+PartSerial(部件序列件): EntityType
+	desc: 装机的实物零件,由序列号+批次号唯一标识,是某个BOMPart的实例,安装于某台ProductInstance。
+	properties:
+		status(状态): Text
+			index: Text
+		batchNo(批次号): Text
+		serialNumber(部件序列号): Text
+			index: Text
+		supplierName(供应商名称): Text
+			index: Text
+	relations:
+		involvedIn8D(关联8D): EightDReport
+		involvedInEvent(关联事件): ProductEvent
+		replacedBy(替换后件): PartSerial
+		replaces(替换前件): PartSerial
+		instanceOfPart(对应设计件): BOMPart
+		suppliedBy(供应商): Organization
+		installedOn(安装于产品): ProductInstance
+
+Installation(安装记录): EntityType
+	desc: 一次装/拆动作的事件记录,记录把PartSerial装上ProductInstance,可由维修事件触发。
+	properties:
+		installationId(安装记录ID): Text
+			index: Text
+		positionCode(安装位号): Text
+			index: Text
+		installTime(安装时间): Text
+			index: Text
+		removeTime(拆卸时间): Text
+		isCurrent(是否当前安装): Text
+			index: Text
+		operatorName(操作人姓名): Text
+			index: Text
+	relations:
+		product(产品实例): ProductInstance
+		partSerial(实际安装件): PartSerial
+		bomPart(对应BOM件): BOMPart
+		generatedByEvent(来源事件): ProductEvent
+
+ProductEvent(产品事件): EntityType
+	desc: 产品发生的一次事件(故障/异常/客诉/试验),发生在ProductInstance上,可触发8D报告。
+	properties:
+		eventId(事件ID): Text
+			index: Text
+		eventCode(事件编码): Text
+			index: Text
+		eventType(事件类型): Text
+			index: Text
+		severity(严重级别): Text
+			index: Text
+		symptom(现象描述): Text
+			index: Text
+		eventTime(发生时间): Text
+			index: Text
+		status(处理状态): Text
+			index: Text
+		reporterName(上报人姓名): Text
+			index: Text
+	relations:
+		happenedOn(发生于产品): ProductInstance
+		responsibleOrg(责任组织): Organization
+		relatedFailureMode(关联失效模式): FailureMode
+		category(事件分类): EventCategory
+		relatedInstallation(关联安装记录): Installation
+		relatedSerial(关联序列件): PartSerial
+		relatedPart(关联设计件): BOMPart
+		has8DReport(8D报告): EightDReport
+
+EightDReport(8D报告): EntityType
+	desc: 8D问题分析报告,由reportNo唯一标识,对应一个源事件,含D2/D4/D5/D7等阶段,同号合并。
+	properties:
+		reportNo(8D编号): Text
+			index: Text
+		issueTitle(问题标题): Text
+			index: Text
+		reportStatus(报告状态): Text
+			index: Text
+		d2ProblemStatement(D2问题描述): Text
+			index: Text
+		d4RootCauseSummary(D4根因分析摘要): Text
+			index: Text
+		d5PermanentCorrectionSummary(D5永久纠正摘要): Text
+			index: Text
+		d7PreventionSummary(D7防再发摘要): Text
+			index: Text
+		ownerName(负责人姓名): Text
+			index: Text
+		ownerRole(负责人角色): Text
+	relations:
+		sourceEvent(源事件): ProductEvent
+		affectedProduct(影响产品): ProductInstance
+		affectedSerial(影响序列件): PartSerial
+		affectedPart(影响设计件): BOMPart
+		rootCause(根因项): CauseItem
+		correctiveAction(纠正措施): ActionItem
+		preventiveAction(预防措施): ActionItem
+		responsibleOrg(责任组织): Organization
+
+CauseItem(原因项): EntityType
+	desc: 8D报告中的原因,causeType取值:根本原因/中间原因/直接原因,因果链以"导致/造成"连接。
+	properties:
+		causeId(原因ID): Text
+			index: Text
+		title(标题): Text
+			index: Text
+		causeType(原因类型): Text
+			index: Text
+		isVerified(是否已验证): Text
+			index: Text
+		evidence(证据描述): Text
+	relations:
+		relatedFailureMode(关联失效模式): FailureMode
+		relatedPart(关联设计件): BOMPart
+		relatedSerial(关联序列件): PartSerial
+		belongsToReport(所属8D): EightDReport
+		relatedEvent(关联事件): ProductEvent
+
+ActionItem(措施项): EntityType
+	desc: 8D报告中的措施,actionType取值:临时措施D3/纠正措施D5/预防措施D7/根因分析D4。
+	properties:
+		actionId(措施ID): Text
+			index: Text
+		title(标题): Text
+			index: Text
+		actionType(措施类型): Text
+			index: Text
+		status(状态): Text
+			index: Text
+		ownerName(负责人姓名): Text
+			index: Text
+	relations:
+		belongsToReport(所属8D): EightDReport
+		verifiesCause(验证原因项): CauseItem
+		relatedEvent(关联事件): ProductEvent
+		targetSerial(作用序列件): PartSerial
+		targetProduct(作用产品): ProductInstance
+		targetPart(作用设计件): BOMPart
+		responsibleOrg(责任组织): Organization
+
+FailureMode(失效模式): EntityType
+	desc: 标准化失效模式名(如压力超差/密封失效/裂纹),同义表述应合并为同一FailureMode。
+	properties:
+		modeCode(失效模式编码): Text
+			index: Text
+
+EventCategory(事件分类): EntityType
+	desc: 事件的分类体系,可有上下级关系parentCategory。
+	properties:
+		categoryCode(分类编码): Text
+			index: Text
+	relations:
+		parentCategory(上级分类): EventCategory
+
+Organization(组织机构): EntityType
+	desc: 公司/部门/客户/供应商,orgType取值:制造商/供应商/客户/部门/项目组,客户供应商都用此类型。
+	properties:
+		orgType(组织类型): Text
+			index: Text
+		orgCode(组织编码): Text
+			index: Text

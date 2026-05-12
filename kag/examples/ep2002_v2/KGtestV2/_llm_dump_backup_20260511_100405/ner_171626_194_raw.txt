@@ -1,0 +1,197 @@
+[
+  {
+    "category": "EightDReport",
+    "properties": {
+      "name": "复兴号动车供风单元干燥器故障（5228）分析报告",
+      "reportNo": "5228",
+      "issueTitle": "复兴号动车供风单元干燥器压力开关NBR隔膜变形导致卡滞故障",
+      "ownerName": "未明确",
+      "ownerRole": "未明确",
+      "d4RootCauseSummary": "NBR隔膜直径、高度、硬度变化，安装后压缩量增加以及高温综合因素造成隔膜变形",
+      "d5PermanentCorrectionSummary": "选用SUCO品牌的金触点压力开关",
+      "d7PreventionSummary": "对已交付供风单元全部更新替代压力开关",
+      "rootCause": [
+        "NBR隔膜直径、高度、硬度变化，安装后压缩量增加以及高温综合因素造成隔膜变形"
+      ],
+      "correctiveAction": [
+        "选用SUCO品牌的金触点压力开关"
+      ],
+      "preventiveAction": [
+        "对已交付供风单元全部更新替代压力开关"
+      ],
+      "affectedPart": [
+        "压力开关NBR隔膜"
+      ],
+      "affectedProduct": [
+        "复兴号动车供风单元"
+      ],
+      "sourceEvent": [
+        "复兴号动车供风单元干燥器压力开关故障事件"
+      ],
+      "responsibleOrg": [
+        "我司"
+      ]
+    }
+  },
+  {
+    "category": "ProductModel",
+    "properties": {
+      "name": "复兴号动车供风单元",
+      "modelCode": "未明确",
+      "hasBOMPart": [
+        "压力开关NBR隔膜"
+      ]
+    }
+  },
+  {
+    "category": "ProductInstance",
+    "properties": {
+      "name": "复兴号动车供风单元",
+      "serialNumber": "未明确",
+      "ownerName": "未明确",
+      "siteCountry": "未明确",
+      "siteCity": "未明确",
+      "basedOnModel": [
+        "复兴号动车供风单元"
+      ],
+      "hasEvent": [
+        "复兴号动车供风单元干燥器压力开关故障事件"
+      ],
+      "has8D": [
+        "复兴号动车供风单元干燥器故障（5228）分析报告"
+      ],
+      "ownedBy": [
+        "未明确"
+      ]
+    }
+  },
+  {
+    "category": "BOMPart",
+    "properties": {
+      "name": "压力开关NBR隔膜",
+      "partNo": "未明确",
+      "partType": "隔膜",
+      "belongsToModel": [
+        "复兴号动车供风单元"
+      ],
+      "hasFailureMode": [
+        "隔膜变形"
+      ]
+    }
+  },
+  {
+    "category": "FailureMode",
+    "properties": {
+      "name": "隔膜变形",
+      "modeCode": "FM-MEMBRANE-DEFORMATION"
+    }
+  },
+  {
+    "category": "ProductEvent",
+    "properties": {
+      "name": "复兴号动车供风单元干燥器压力开关故障事件",
+      "eventTime": "未明确",
+      "symptom": "接通后不断开",
+      "eventType": "故障",
+      "reporterName": "未明确",
+      "happenedOn": [
+        "复兴号动车供风单元"
+      ],
+      "relatedFailureMode": [
+        "隔膜变形"
+      ],
+      "relatedPart": [
+        "压力开关NBR隔膜"
+      ],
+      "has8DReport": [
+        "复兴号动车供风单元干燥器故障（5228）分析报告"
+      ]
+    }
+  },
+  {
+    "category": "CauseItem",
+    "properties": {
+      "name": "NBR隔膜直径、高度、硬度变化，安装后压缩量增加以及高温综合因素造成隔膜变形",
+      "title": "NBR隔膜直径、高度、硬度变化，安装后压缩量增加以及高温综合因素造成隔膜变形",
+      "causeType": "根本原因",
+      "isVerified": "true",
+      "evidence": "复兴号动车供风单元干燥器压力开关NBR隔膜直径、高度、硬度变化，安装后压缩量增加以及高温综合因素造成隔膜变形，隔膜变形导致堵塞进气孔，与壳体内腔之间形成密闭空间导致卡滞故障的产生。",
+      "belongsToReport": [
+        "复兴号动车供风单元干燥器故障（5228）分析报告"
+      ],
+      "relatedFailureMode": [
+        "隔膜变形"
+      ],
+      "relatedPart": [
+        "压力开关NBR隔膜"
+      ]
+    }
+  },
+  {
+    "category": "ActionItem",
+    "properties": {
+      "name": "选用SUCO品牌的金触点压力开关",
+      "title": "选用SUCO品牌的金触点压力开关",
+      "actionType": "纠正措施D5",
+      "status": "已完成",
+      "evidence": "综上所述，我司长期替代方案拟选用SUCO品牌的金触点压力开关。",
+      "belongsToReport": [
+        "复兴号动车供风单元干燥器故障（5228）分析报告"
+      ],
+      "verifiesCause": [
+        "NBR隔膜直径、高度、硬度变化，安装后压缩量增加以及高温综合因素造成隔膜变形"
+      ],
+      "targetPart": [
+        "压力开关NBR隔膜"
+      ]
+    }
+  },
+  {
+    "category": "ActionItem",
+    "properties": {
+      "name": "对已交付供风单元全部更新替代压力开关",
+      "title": "对已交付供风单元全部更新替代压力开关",
+      "actionType": "预防措施D7",
+      "status": "计划中",
+      "evidence": "对已交付供风单元全部更新替代压力开关。",
+      "belongsToReport": [
+        "复兴号动车供风单元干燥器故障（5228）分析报告"
+      ]
+    }
+  },
+  {
+    "category": "Organization",
+    "properties": {
+      "name": "我司",
+      "orgType": "制造商"
+    }
+  },
+  {
+    "category": "Organization",
+    "properties": {
+      "name": "工业和信息化部电子第五研究所",
+      "orgType": "第三方分析机构"
+    }
+  },
+  {
+    "category": "Organization",
+    "properties": {
+      "name": "KB欧洲试验室",
+      "orgType": "第三方分析机构"
+    }
+  },
+  {
+    "category": "Organization",
+    "properties": {
+      "name": "SUCO",
+      "orgType": "制造商"
+    }
+  },
+  {
+    "category": "Organization",
+    "properties": {
+      "name": "Barksdale",
+      "orgType": "制造商"
+    }
+  }
+]

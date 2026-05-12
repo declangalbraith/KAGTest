@@ -1,0 +1,207 @@
+[
+  {
+    "category": "EightDReport",
+    "name": "关于复兴号动车供风单元干燥器故障（5228）分析报告",
+    "properties": {
+      "reportNo": "5228",
+      "issueTitle": "复兴号动车供风单元干燥器压力开关故障",
+      "ownerName": null,
+      "ownerRole": null,
+      "d4RootCauseSummary": "NBR隔膜直径、高度、硬度变化，安装后压缩量增加以及高温综合因素造成隔膜变形，隔膜变形导致堵塞进气孔，与壳体内腔之间形成密闭空间导致卡滞故障的产生。",
+      "d5PermanentCorrectionSummary": "对已交付供风单元全部更新替代压力开关。",
+      "d7PreventionSummary": "对2021年44周之后交付机组进行现场整治（优先南方路局），共计610列1518台供风单元；2021年44周之前交付机组结合四级修进行整治，四级修干燥器压力开关为必换件。"
+    }
+  },
+  {
+    "category": "ProductModel",
+    "name": "复兴号动车供风单元",
+    "properties": {
+      "modelCode": null,
+      "productCategory": "供风单元",
+      "productLine": null,
+      "productFamily": null,
+      "manufacturerName": null
+    }
+  },
+  {
+    "category": "ProductInstance",
+    "name": "复兴号动车供风单元(SN-不明确)",
+    "properties": {
+      "serialNumber": "SN-不明确",
+      "ownerName": null,
+      "siteCity": null,
+      "siteCountry": null,
+      "siteCode": null
+    }
+  },
+  {
+    "category": "BOMPart",
+    "name": "压力开关NBR隔膜",
+    "properties": {
+      "partNo": null,
+      "bomLevel": null,
+      "positionCode": null,
+      "partType": "隔膜"
+    }
+  },
+  {
+    "category": "FailureMode",
+    "name": "隔膜变形",
+    "properties": {
+      "modeCode": "FM-DIAPHRAGM-DEFORMATION"
+    }
+  },
+  {
+    "category": "ProductEvent",
+    "name": "复兴号动车供风单元干燥器压力开关故障事件",
+    "properties": {
+      "severity": null,
+      "symptom": "接通后不断开",
+      "eventType": "故障",
+      "eventCode": null,
+      "reporterName": null,
+      "status": null,
+      "eventId": null
+    }
+  },
+  {
+    "category": "PartSerial",
+    "name": "P1（复现试验件1）",
+    "properties": {
+      "batchNo": null,
+      "status": "故障复现",
+      "supplierName": null,
+      "serialNumber": "不明确"
+    }
+  },
+  {
+    "category": "PartSerial",
+    "name": "P2（复现试验件2）",
+    "properties": {
+      "batchNo": null,
+      "status": "故障复现",
+      "supplierName": null,
+      "serialNumber": "不明确"
+    }
+  },
+  {
+    "category": "PartSerial",
+    "name": "S1（故障件1）",
+    "properties": {
+      "batchNo": null,
+      "status": "故障",
+      "supplierName": null,
+      "serialNumber": "不明确"
+    }
+  },
+  {
+    "category": "PartSerial",
+    "name": "S2（故障件2）",
+    "properties": {
+      "batchNo": null,
+      "status": "故障",
+      "supplierName": null,
+      "serialNumber": "不明确"
+    }
+  },
+  {
+    "category": "PartSerial",
+    "name": "S3（故障件3）",
+    "properties": {
+      "batchNo": null,
+      "status": "故障",
+      "supplierName": null,
+      "serialNumber": "不明确"
+    }
+  },
+  {
+    "category": "PartSerial",
+    "name": "S4（故障件4）",
+    "properties": {
+      "batchNo": null,
+      "status": "故障",
+      "supplierName": null,
+      "serialNumber": "不明确"
+    }
+  },
+  {
+    "category": "PartSerial",
+    "name": "S5（故障件5）",
+    "properties": {
+      "batchNo": null,
+      "status": "故障",
+      "supplierName": null,
+      "serialNumber": "不明确"
+    }
+  },
+  {
+    "category": "CauseItem",
+    "name": "NBR隔膜直径、高度、硬度变化，安装后压缩量增加以及高温综合因素造成隔膜变形",
+    "properties": {
+      "title": "NBR隔膜直径、高度、硬度变化，安装后压缩量增加以及高温综合因素造成隔膜变形",
+      "causeType": "根本原因",
+      "evidence": "通过分析和试验确认NBR隔膜直径、高度、硬度变化，安装后压缩量增加以及高温综合因素造成隔膜变形，隔膜变形导致堵塞进气孔，与壳体内腔之间形成密闭空间导致卡滞故障的产生。"
+    }
+  },
+  {
+    "category": "ActionItem",
+    "name": "对已交付供风单元全部更新替代压力开关",
+    "properties": {
+      "title": "对已交付供风单元全部更新替代压力开关",
+      "actionType": "纠正措施D5",
+      "status": "计划中",
+      "evidence": "对已交付供风单元全部更新替代压力开关。"
+    }
+  },
+  {
+    "category": "ActionItem",
+    "name": "对2021年44周之后交付机组进行现场整治（优先南方路局），共计610列1518台供风单元",
+    "properties": {
+      "title": "对2021年44周之后交付机组进行现场整治（优先南方路局），共计610列1518台供风单元",
+      "actionType": "预防措施D7",
+      "status": "计划中",
+      "evidence": "对2021年44周之后交付机组进行现场整治（优先南方路局），共计610列1518台供风单元。"
+    }
+  },
+  {
+    "category": "ActionItem",
+    "name": "2021年44周之前交付机组结合四级修进行整治，四级修干燥器压力开关为必换件",
+    "properties": {
+      "title": "2021年44周之前交付机组结合四级修进行整治，四级修干燥器压力开关为必换件",
+      "actionType": "预防措施D7",
+      "status": "计划中",
+      "evidence": "2021年44周之前交付机组结合四级修进行整治，四级修干燥器压力开关为必换件。"
+    }
+  },
+  {
+    "category": "Organization",
+    "name": "复兴号动车供风单元项目组",
+    "properties": {
+      "orgType": "内部部门"
+    }
+  },
+  {
+    "category": "Organization",
+    "name": "工业和信息化部电子第五研究所",
+    "properties": {
+      "orgType": "第三方"
+    }
+  },
+  {
+    "category": "Organization",
+    "name": "SUCO",
+    "properties": {
+      "orgType": "制造商"
+    }
+  },
+  {
+    "category": "BOMPart",
+    "name": "SUCO金触点压力开关",
+    "properties": {
+      "partNo": "0190-458-03-1-042",
+      "bomLevel": null,
+      "positionCode": null,
+      "partType": "压力开关"
+    }
+  }
+]
