@@ -38,7 +38,7 @@ def buildKB(file_path):
 if __name__ == "__main__":
 
     data_dir = os.path.join(THIS_DIR, "data")
-    file_path = os.path.join(data_dir, "8D_佛山3号线T15列车制动不缓解调查报告_清洗版.md")
+    file_path = os.path.join(data_dir, "8D_Report_Guangzhou_L14_21_Levelling_valve_stuck_V1.1_清洗版.md")
 
     if not os.path.exists(file_path):
         logger.error(f"File not found: {file_path}")

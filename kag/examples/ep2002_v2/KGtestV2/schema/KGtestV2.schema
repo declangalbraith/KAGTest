@@ -9,6 +9,7 @@ ProductModel(产品型号): EntityType
 			index: Text
 		modelCode(型号编码): Text
 			index: Text
+			constraint: NotNull,Unique
 		productCategory(产品类别): Text
 			index: Text
 		manufacturerName(制造商名称): Text
@@ -24,6 +25,7 @@ ProductInstance(产品实例): EntityType
 	properties:
 		serialNumber(产品序列号): Text
 			index: Text
+			constraint: NotNull,Unique
 		assetCode(资产编码): Text
 			index: Text
 		commissionDate(启用日期): Text
@@ -63,11 +65,15 @@ BOMPart(BOM部件): EntityType
 		alternativePart(替代件): BOMPart
 
 PartSerial(部件序列件): EntityType
-	desc: 装机的实物零件,由序列号+批次号唯一标识,是某个BOMPart的实例,安装于某台ProductInstance。
+	desc: 装机的实物零件,由序列号+批次号联合唯一标识,是某个BOMPart的实例,安装于某台ProductInstance。
+	# 注: PartSerial 的天然主键是 serialNumber+batchNo 联合, OpenSPG Unique 仅支持单字段,
+	# 此处不加 Unique, 同件去重依赖 kag_post_processor 实体对齐。
+	# 如需强约束,可在抽取阶段拼接 uniqueKey 字段(serialNumber::batchNo)再加 Unique。
 	properties:
 		status(状态): Text
 			index: Text
 		batchNo(批次号): Text
+			index: Text
 		serialNumber(部件序列号): Text
 			index: Text
 		supplierName(供应商名称): Text
@@ -86,6 +92,7 @@ Installation(安装记录): EntityType
 	properties:
 		installationId(安装记录ID): Text
 			index: Text
+			constraint: NotNull,Unique
 		positionCode(安装位号): Text
 			index: Text
 		installTime(安装时间): Text
@@ -135,18 +142,19 @@ EightDReport(8D报告): EntityType
 	properties:
 		reportNo(8D编号): Text
 			index: Text
+			constraint: NotNull,Unique
 		issueTitle(问题标题): Text
 			index: Text
 		reportStatus(报告状态): Text
 			index: Text
 		d2ProblemStatement(D2问题描述): Text
-			index: Text
+			index: TextAndVector
 		d4RootCauseSummary(D4根因分析摘要): Text
-			index: Text
+			index: TextAndVector
 		d5PermanentCorrectionSummary(D5永久纠正摘要): Text
-			index: Text
+			index: TextAndVector
 		d7PreventionSummary(D7防再发摘要): Text
-			index: Text
+			index: TextAndVector
 		ownerName(负责人姓名): Text
 			index: Text
 		ownerRole(负责人角色): Text
@@ -206,12 +214,14 @@ FailureMode(失效模式): EntityType
 	properties:
 		modeCode(失效模式编码): Text
 			index: Text
+			constraint: NotNull,Unique
 
 EventCategory(事件分类): EntityType
 	desc: 事件的分类体系,可有上下级关系parentCategory。
 	properties:
 		categoryCode(分类编码): Text
 			index: Text
+			constraint: NotNull,Unique
 	relations:
 		parentCategory(上级分类): EventCategory
 

@@ -14,4 +14,5 @@
 from . import ner
 from . import triple
 from . import kgtest_extractor
+from . import qa_generator
 

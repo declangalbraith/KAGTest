@@ -10,7 +10,7 @@ chat_llm: &chat_llm
   type: maas
   base_url: https://api.siliconflow.cn/v1
   api_key: sk-yrwobvrcxtpyxaqecbqqkqoacxcxpexeiteyywznyiebavng
-  model: Qwen/Qwen2.5-72B-Instruct
+  model: deepseek-ai/DeepSeek-V3.2
   enable_check: false
 
 vectorize_model: &vectorize_model
@@ -43,10 +43,10 @@ kag_builder_pipeline:
     splitter:
       type: length_splitter
       split_length: 8000            # 8D报告清洗后内容不多，直接一个chunk
-      window_length: 300            # 邻 chunk 重叠 500 字,跨段关系不丢
+      window_length: 300            # 邻 chunk 重叠 300 字,跨段关系不丢
     extractor:
       type: kgtest_schema_constraint_extractor  # builder/prompt/kgtest_extractor.py，复用 NER 五元组写图
-      llm: *chat_llm
+      llm: *openie_llm
       ner_prompt:
         type: kgtest_ner            # 自定义 NER prompt(builder/prompt/ner.py)
       std_prompt:
@@ -112,7 +112,7 @@ kg_fr: &kg_fr
     type: entity_linking
     graph_api: *graph_api
     search_api: *search_api
-    recognition_threshold: 0.8
+    recognition_threshold: 0.85
     exclude_types:
       - Chunk
       - AtomicQuery
@@ -173,6 +173,6 @@ kag_solver_pipeline:
     type: llm_generator
     llm_client: *chat_llm
     generated_prompt:
-      type: default_refer_generator_prompt
+      type: kgtest_concise_generator 
     enable_ref: true
 

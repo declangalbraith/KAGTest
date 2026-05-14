@@ -46,6 +46,8 @@ logs/
 ckpt/
 builder/ckpt/
 solver/ckpt/
+kag/examples/ep2002_v2/KGtestV2/_llm_dump_backup_20260511_100405
+kag/examples/ep2002_v2/KGtestV2/builder/prompt/_llm_dump
 
 # ===== 环境变量与密钥 =====
 .env
